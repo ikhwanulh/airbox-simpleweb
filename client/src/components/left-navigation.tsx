@@ -44,7 +44,7 @@ export default function LeftNavigation() {
   };
 
   return (
-    <nav className="fixed left-4 top-1/2 transform -translate-y-1/2 z-50">
+    <nav className="fixed left-4 top-4 z-50">
       <motion.div 
         className="bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-slate-200"
         initial={{ x: -100, opacity: 0 }}

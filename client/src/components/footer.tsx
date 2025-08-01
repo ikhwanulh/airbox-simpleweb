@@ -1,4 +1,4 @@
-import { Package } from "lucide-react";
+import airboxLogo from "@assets/airbox white_1754038254518.png";
 
 export default function Footer() {
   return (
@@ -7,8 +7,8 @@ export default function Footer() {
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8 items-center">
             <div className="flex items-center space-x-3">
-              <div className="bg-blue-600 w-12 h-12 rounded-lg flex items-center justify-center">
-                <Package className="w-6 h-6" />
+              <div className="w-12 h-12 rounded-lg flex items-center justify-center">
+                <img src={airboxLogo} alt="Air Box Teknologi" className="w-10 h-10 object-contain" />
               </div>
               <div>
                 <h3 className="text-xl font-bold">Air Box Teknologi</h3>

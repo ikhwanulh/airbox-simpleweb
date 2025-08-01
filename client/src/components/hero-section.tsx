@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import airboxLogo from "@assets/airbox white_1754038254518.png";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -33,6 +34,15 @@ export default function HeroSection() {
       
       <div className="container mx-auto px-6 text-center relative z-10">
         <div className="max-w-4xl mx-auto">
+          <motion.div
+            className="flex justify-center mb-8"
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+          >
+            <img src={airboxLogo} alt="Air Box Teknologi" className="h-20 md:h-28 object-contain" />
+          </motion.div>
+          
           <motion.h1 
             className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight"
             initial={{ y: 50, opacity: 0 }}
@@ -67,7 +77,7 @@ export default function HeroSection() {
             <Button 
               onClick={() => scrollToSection("products")}
               variant="outline"
-              className="border-2 border-white text-white px-8 py-4 text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
+              className="border-2 border-white text-white bg-transparent px-8 py-4 text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
               size="lg"
             >
               View Products
