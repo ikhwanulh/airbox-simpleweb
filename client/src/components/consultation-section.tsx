@@ -49,7 +49,13 @@ export default function ConsultationSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <div id="cekat-chat-widget" className="w-full h-96"></div>
+              <iframe
+                src="https://live.cekat.ai/?chat=ARSA-nSF62ScG"
+                className="w-full h-96 rounded-lg border-0"
+                title="Air Box AI Consultant"
+                allow="microphone; camera"
+                sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+              />
             </motion.div>
           </div>
         </div>
