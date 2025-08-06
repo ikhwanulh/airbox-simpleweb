@@ -21,10 +21,10 @@ export default function Footer() {
             </div>
             
             <div className="flex justify-end space-x-6">
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
+              <a href="/privacy-policy" className="text-slate-400 hover:text-white transition-colors">
                 Privacy Policy
               </a>
-              <a href="#" className="text-slate-400 hover:text-white transition-colors">
+              <a href="/team" className="text-slate-400 hover:text-white transition-colors">
                 Team Members
               </a>
             </div>

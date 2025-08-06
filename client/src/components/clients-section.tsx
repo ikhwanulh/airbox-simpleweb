@@ -1,12 +1,41 @@
 import { motion } from "framer-motion";
+import airBoxLogistics from "@assets/Air Box Logistics_1754476243899.png";
+import airBoxPersonalia from "@assets/Air Box Personalia_1754476243901.png";
+import beenshine from "@assets/Beenshine_1754476243901.png";
+import manggalaSemesta from "@assets/Manggala Semesta Investama_1754476243901.png";
+import mitraAngkasa from "@assets/Mitra Angkasa Raya_1754476243901.png";
+import mitraEkspedisi from "@assets/Mitra Ekspedisi Jawa_1754476243902.png";
+import mitraSamudra from "@assets/Mitra Samudra Tangguh_1754476243902.png";
 
 const clients = [
-  "Mitra Angkasa Raya",
-  "Mitra Ekspedisi Jawa", 
-  "Air Box Logistik",
-  "Air Box Personalia",
-  "Chaya Hantara Nusantara",
-  "Solusi Logistik Indonesia",
+  {
+    name: "Air Box Logistics",
+    logo: airBoxLogistics,
+  },
+  {
+    name: "Air Box Personalia", 
+    logo: airBoxPersonalia,
+  },
+  {
+    name: "Beenshine",
+    logo: beenshine,
+  },
+  {
+    name: "Manggala Semesta Investama",
+    logo: manggalaSemesta,
+  },
+  {
+    name: "Mitra Angkasa Raya",
+    logo: mitraAngkasa,
+  },
+  {
+    name: "Mitra Ekspedisi Jawa",
+    logo: mitraEkspedisi,
+  },
+  {
+    name: "Mitra Samudra Tangguh",
+    logo: mitraSamudra,
+  },
 ];
 
 export default function ClientsSection() {
@@ -36,19 +65,23 @@ export default function ClientsSection() {
             <div className="flex space-x-12 client-scroll">
               {/* First set of clients */}
               {clients.map((client, index) => (
-                <div key={`first-${index}`} className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center border border-slate-200">
-                  <span className="text-slate-600 font-semibold text-sm text-center px-4">
-                    {client}
-                  </span>
+                <div key={`first-${index}`} className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center border border-slate-200 p-4">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               ))}
               
               {/* Duplicate set for seamless loop */}
               {clients.map((client, index) => (
-                <div key={`second-${index}`} className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center border border-slate-200">
-                  <span className="text-slate-600 font-semibold text-sm text-center px-4">
-                    {client}
-                  </span>
+                <div key={`second-${index}`} className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center border border-slate-200 p-4">
+                  <img 
+                    src={client.logo} 
+                    alt={client.name}
+                    className="max-w-full max-h-full object-contain"
+                  />
                 </div>
               ))}
             </div>

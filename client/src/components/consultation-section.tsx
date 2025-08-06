@@ -49,7 +49,7 @@ export default function ConsultationSection() {
               transition={{ duration: 0.8, delay: 0.4 }}
               viewport={{ once: true }}
             >
-              <AIchatbot />
+              <div id="cekat-chat-widget" className="w-full h-96"></div>
             </motion.div>
           </div>
         </div>
