@@ -196,7 +196,7 @@ export default function Team() {
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
               Our team combines business acumen with technical expertise to deliver transformative digital solutions.
             </p>
-            <Link href="/#contact">
+            <Link href="/#consultation">
               <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
                 Get in Touch
               </Button>
