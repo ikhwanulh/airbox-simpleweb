@@ -1,7 +1,9 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowLeft, Award, Users, Code, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import ContactModal from "@/components/contact-modal";
 
 const businessExperts = [
   {
@@ -86,6 +88,8 @@ function TeamMemberCard({ member, index }: { member: any; index: number }) {
 }
 
 export default function Team() {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-slate-50">
       {/* Navigation */}
@@ -196,14 +200,21 @@ export default function Team() {
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
               Our team combines business acumen with technical expertise to deliver transformative digital solutions.
             </p>
-            <Link href="/#contact">
-              <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg">
-                Get in Touch
-              </Button>
-            </Link>
+            <Button 
+              onClick={() => setIsContactModalOpen(true)}
+              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+            >
+              Get in Touch
+            </Button>
           </motion.div>
         </div>
       </section>
+
+      {/* Contact Modal */}
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </div>
   );
 }
