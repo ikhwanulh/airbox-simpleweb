@@ -1,9 +1,14 @@
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Users, Clock, FileText, CheckCircle, AlertTriangle, Lightbulb } from "lucide-react";
 import { Link } from "wouter";
 import kruImage from "@assets/KRU_1766991464658.png";
 
 export default function KruPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-slate-900">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
