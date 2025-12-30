@@ -42,7 +42,7 @@ export default function InteractiveDashboardPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
-                  href="https://form.jotform.com/253633720938462"
+                  href="https://form.jotform.com/253635394658470"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
@@ -398,7 +398,7 @@ export default function InteractiveDashboardPage() {
               Start your journey to actionable operational intelligence
             </p>
             <a
-              href="https://form.jotform.com/253633720938462"
+              href="https://form.jotform.com/253635394658470"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
