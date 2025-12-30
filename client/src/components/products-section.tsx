@@ -37,7 +37,7 @@ const products = [
     icon: Calculator,
     color: "orange",
     tags: ["Tax Compliance", "Automation", "Analytics"],
-    link: null,
+    link: "/jurnal-pintar",
   },
 ];
 
@@ -111,7 +111,7 @@ export default function ProductsSection() {
                     </div>
                     {product.link && (
                       <div className="mt-4">
-                        <span className="text-purple-600 font-medium hover:underline">Learn More →</span>
+                        <span className={`${product.color === 'orange' ? 'text-orange-600' : 'text-purple-600'} font-medium hover:underline`}>Learn More →</span>
                       </div>
                     )}
                   </div>

@@ -7,6 +7,7 @@ import Home from "@/pages/home";
 import PrivacyPolicy from "@/pages/privacy-policy";
 import Team from "@/pages/team";
 import Kru from "@/pages/kru";
+import JurnalPintar from "@/pages/jurnal-pintar";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -16,6 +17,7 @@ function Router() {
       <Route path="/privacy-policy" component={PrivacyPolicy} />
       <Route path="/team" component={Team} />
       <Route path="/kru" component={Kru} />
+      <Route path="/jurnal-pintar" component={JurnalPintar} />
       <Route component={NotFound} />
     </Switch>
   );
