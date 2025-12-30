@@ -1,0 +1,67 @@
+Headline
+Real-Time Visibility. Actionable Control. One Source of Truth.
+Subheadline
+ABT Interactive Dashboard & Task Monitoring is a real-time operational intelligence system that transforms raw operational data into clear, actionable insights — enabling leaders to monitor KPIs, track execution, and make decisions with confidence.
+Primary CTA
+👉 Run an Operational Visibility Diagnostic
+Secondary CTA
+See Dashboard Capabilities
+PROBLEM STATEMENT
+Headline
+Most Dashboards Show Data. Very Few Enable Control.
+Many organizations already have reports and dashboards, yet still face:
+KPIs that lag behind real operational issues
+Task execution that cannot be monitored end-to-end
+Multiple versions of performance data
+Delayed decisions due to unclear ownership and status
+Visibility without context does not improve performance.
+POSITIONING STATEMENT
+Headline
+If You Cannot See It in Real Time, You Cannot Manage It in Real Time
+ABT Interactive Dashboard is built on one core principle:
+Operational decisions require live, trusted, and contextual data — not static reports.
+This system bridges the gap between metrics and execution.
+SOLUTION / USP
+Headline
+A Unified View of Performance and Execution
+The system provides:
+Real-time KPI visualization
+Track operational, financial, and performance metrics as they happen
+Task and workflow monitoring
+See task ownership, progress, bottlenecks, and delays in one view
+Drill-down traceability
+From high-level KPI to individual task or transaction
+Single operational command center
+One dashboard for management, operations, and execution teams
+Designed for complex, multi-team operations.
+VALUE PROPOSITION / UVP
+Headline
+Decisions Should Be Driven by Reality, Not by Delayed Reports
+With ABT Interactive Dashboard, organizations can:
+Detect operational issues earlier
+Hold teams accountable with transparent task tracking
+Align execution with strategic KPIs
+Reduce dependency on manual reporting and follow-ups
+Your dashboard becomes a management tool, not a presentation slide.
+ACTIVATION FLOW (MEASUREMENT-FIRST)
+Headline
+We Start by Diagnosing Visibility Gaps
+Operational Visibility Diagnostic (5 minutes)
+Assess KPI clarity, data latency, and task monitoring maturity
+Dashboard & Workflow Mapping Call (30 minutes)
+Define the KPIs, task flows, and decision points that matter
+Pilot Dashboard Implementation
+Deploy dashboards aligned to real operational control needs
+👉 Start the Diagnostic
+IDEAL USERS
+Designed for:
+Operations leaders and management teams
+Organizations running multi-team or multi-location operations
+Companies requiring real-time performance governance
+Not designed for:
+Teams looking only for static reporting or visual summaries
+CLOSING SECTION
+Headline
+Do You See Problems When They Happen — or After They Escalate?
+Real-time visibility is no longer optional for scalable operations.
+👉 Run the Operational Visibility Diagnostic

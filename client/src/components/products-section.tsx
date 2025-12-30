@@ -10,7 +10,7 @@ const products = [
     icon: BarChart3,
     color: "blue",
     tags: ["Real-time Analytics", "Task Management", "KPI Tracking"],
-    link: null,
+    link: "/interactive-dashboard",
   },
   {
     id: 2,
@@ -111,7 +111,7 @@ export default function ProductsSection() {
                     </div>
                     {product.link && (
                       <div className="mt-4">
-                        <span className={`${product.color === 'orange' ? 'text-orange-600' : product.color === 'green' ? 'text-green-600' : 'text-purple-600'} font-medium hover:underline`}>Learn More →</span>
+                        <span className={`${product.color === 'orange' ? 'text-orange-600' : product.color === 'green' ? 'text-green-600' : product.color === 'blue' ? 'text-blue-600' : 'text-purple-600'} font-medium hover:underline`}>Learn More →</span>
                       </div>
                     )}
                   </div>
