@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { BarChart3, Truck, Users, Calculator } from "lucide-react";
+import { Link } from "wouter";
 
 const products = [
   {
@@ -9,6 +10,7 @@ const products = [
     icon: BarChart3,
     color: "blue",
     tags: ["Real-time Analytics", "Task Management", "KPI Tracking"],
+    link: null,
   },
   {
     id: 2,
@@ -17,14 +19,16 @@ const products = [
     icon: Truck,
     color: "green",
     tags: ["Multi-modal Tracking", "Route Optimization", "Real-time Updates"],
+    link: null,
   },
   {
     id: 3,
-    title: "Kru Pintar",
+    title: "KRU",
     description: "HRIS solution that simplifies the employment lifecycle for high-volume teams, ensuring compliance and automation. Streamline recruitment, onboarding, payroll, and performance management with intelligent workflows.",
     icon: Users,
     color: "purple",
     tags: ["HR Automation", "Compliance", "Performance Tracking"],
+    link: "/kru",
   },
   {
     id: 4,
@@ -33,6 +37,7 @@ const products = [
     icon: Calculator,
     color: "orange",
     tags: ["Tax Compliance", "Automation", "Analytics"],
+    link: null,
   },
 ];
 
@@ -84,7 +89,59 @@ export default function ProductsSection() {
               const colors = colorVariants[product.color as keyof typeof colorVariants];
               const isEven = index % 2 === 0;
               
-              return (
+              const cardContent = (
+                <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? "lg:grid-flow-col-dense" : ""}`}>
+                  <div className={`p-8 lg:p-12 flex flex-col justify-center ${!isEven ? "lg:col-start-2" : ""}`}>
+                    <div className={`${colors.icon} w-16 h-16 rounded-lg flex items-center justify-center mb-6`}>
+                      <Icon className="w-8 h-8" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-4">{product.title}</h3>
+                    <p className="text-slate-600 leading-relaxed mb-6">
+                      {product.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {product.tags.map((tag, tagIndex) => (
+                        <span 
+                          key={tagIndex}
+                          className={`${colors.tags} px-3 py-1 rounded-full text-sm font-medium`}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    {product.link && (
+                      <div className="mt-4">
+                        <span className="text-purple-600 font-medium hover:underline">Learn More →</span>
+                      </div>
+                    )}
+                  </div>
+                  
+                  <div className={`bg-gradient-to-br ${colors.gradient} p-8 flex items-center justify-center ${!isEven ? "lg:col-start-1" : ""}`}>
+                    <div className="w-full h-64 bg-white/20 rounded-lg flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <Icon className="w-16 h-16 mb-4 mx-auto" />
+                        <p className="text-lg font-medium">{product.title}</p>
+                        <p className="text-sm opacity-80">Interactive Preview</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+
+              return product.link ? (
+                <Link key={product.id} href={product.link}>
+                  <motion.div
+                    className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 cursor-pointer"
+                    initial={{ y: 50, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.8, delay: index * 0.1 }}
+                    viewport={{ once: true }}
+                    whileHover={{ y: -5 }}
+                  >
+                    {cardContent}
+                  </motion.div>
+                </Link>
+              ) : (
                 <motion.div
                   key={product.id}
                   className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
@@ -94,37 +151,7 @@ export default function ProductsSection() {
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
                 >
-                  <div className={`grid lg:grid-cols-2 gap-0 ${!isEven ? "lg:grid-flow-col-dense" : ""}`}>
-                    <div className={`p-8 lg:p-12 flex flex-col justify-center ${!isEven ? "lg:col-start-2" : ""}`}>
-                      <div className={`${colors.icon} w-16 h-16 rounded-lg flex items-center justify-center mb-6`}>
-                        <Icon className="w-8 h-8" />
-                      </div>
-                      <h3 className="text-2xl font-bold text-slate-800 mb-4">{product.title}</h3>
-                      <p className="text-slate-600 leading-relaxed mb-6">
-                        {product.description}
-                      </p>
-                      <div className="flex flex-wrap gap-2">
-                        {product.tags.map((tag, tagIndex) => (
-                          <span 
-                            key={tagIndex}
-                            className={`${colors.tags} px-3 py-1 rounded-full text-sm font-medium`}
-                          >
-                            {tag}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <div className={`bg-gradient-to-br ${colors.gradient} p-8 flex items-center justify-center ${!isEven ? "lg:col-start-1" : ""}`}>
-                      <div className="w-full h-64 bg-white/20 rounded-lg flex items-center justify-center">
-                        <div className="text-center text-white">
-                          <Icon className="w-16 h-16 mb-4 mx-auto" />
-                          <p className="text-lg font-medium">{product.title}</p>
-                          <p className="text-sm opacity-80">Interactive Preview</p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  {cardContent}
                 </motion.div>
               );
             })}
