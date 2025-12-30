@@ -19,7 +19,7 @@ const products = [
     icon: Truck,
     color: "green",
     tags: ["Multi-modal Tracking", "Route Optimization", "Real-time Updates"],
-    link: null,
+    link: "/kurir-pintar",
   },
   {
     id: 3,
@@ -111,7 +111,7 @@ export default function ProductsSection() {
                     </div>
                     {product.link && (
                       <div className="mt-4">
-                        <span className={`${product.color === 'orange' ? 'text-orange-600' : 'text-purple-600'} font-medium hover:underline`}>Learn More →</span>
+                        <span className={`${product.color === 'orange' ? 'text-orange-600' : product.color === 'green' ? 'text-green-600' : 'text-purple-600'} font-medium hover:underline`}>Learn More →</span>
                       </div>
                     )}
                   </div>
