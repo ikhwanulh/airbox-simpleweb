@@ -156,6 +156,27 @@ export default function KruPage() {
         </div>
       </section>
 
+      <section className="py-20 px-6 bg-slate-900">
+        <div className="container mx-auto max-w-4xl text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              If Administration Grows Linearly, Your Operations Are Not Scalable
+            </h2>
+            <p className="text-xl text-slate-300 mb-4">
+              KRU Pintar enables operational leverage, allowing:
+            </p>
+            <p className="text-2xl text-purple-400 font-semibold">
+              One administrator to confidently manage thousands of employees.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-20 px-6 bg-gradient-to-r from-purple-600 to-blue-600">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
