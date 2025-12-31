@@ -65,22 +65,24 @@ export default function ClientsSection() {
             <div className="flex space-x-12 client-scroll">
               {/* First set of clients */}
               {clients.map((client, index) => (
-                <div key={`first-${index}`} className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center border border-slate-200 p-4">
+                <div key={`first-${index}`} className="flex-shrink-0 w-48 h-28 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center border-2 border-blue-100 p-5">
                   <img 
                     src={client.logo} 
                     alt={client.name}
                     className="max-w-full max-h-full object-contain"
+                    loading="lazy"
                   />
                 </div>
               ))}
               
               {/* Duplicate set for seamless loop */}
               {clients.map((client, index) => (
-                <div key={`second-${index}`} className="flex-shrink-0 w-48 h-24 bg-white rounded-lg shadow-sm flex items-center justify-center border border-slate-200 p-4">
+                <div key={`second-${index}`} className="flex-shrink-0 w-48 h-28 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center border-2 border-blue-100 p-5">
                   <img 
                     src={client.logo} 
                     alt={client.name}
                     className="max-w-full max-h-full object-contain"
+                    loading="lazy"
                   />
                 </div>
               ))}

@@ -68,11 +68,13 @@ export default function KurirPintarPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <img
-                src={kurirImage}
-                alt="Kurir Pintar - Logistics Operations System"
-                className="max-w-xs w-full drop-shadow-2xl"
-              />
+              <div className="bg-white rounded-2xl p-8 shadow-xl">
+                <img
+                  src={kurirImage}
+                  alt="Kurir Pintar - Logistics Operations System"
+                  className="max-w-xs w-full"
+                />
+              </div>
             </motion.div>
           </div>
         </div>

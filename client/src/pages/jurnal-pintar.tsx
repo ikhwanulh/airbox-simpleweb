@@ -59,11 +59,13 @@ export default function JurnalPintarPage() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <img
-                src={jurnalImage}
-                alt="Jurnal Pintar - Smart Accounting System"
-                className="max-w-sm w-full drop-shadow-2xl"
-              />
+              <div className="bg-white rounded-2xl p-8 shadow-xl">
+                <img
+                  src={jurnalImage}
+                  alt="Jurnal Pintar - Smart Accounting System"
+                  className="max-w-[200px] w-full"
+                />
+              </div>
             </motion.div>
           </div>
         </div>
