@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Truck, CheckCircle, AlertTriangle, Lightbulb, Search, Clock, FileText, Target, Shield, ArrowRight, Play } from "lucide-react";
 import { Link } from "wouter";
 import kurirImage from "@assets/KurirPintar_1766991464658.png";
+import kurirTraceabilityVideo from "@assets/kurirpintar_1767149142418.mp4";
 
 export default function KurirPintarPage() {
   useEffect(() => {
@@ -90,11 +91,16 @@ export default function KurirPintarPage() {
             viewport={{ once: true }}
           >
             <p className="text-slate-400 mb-4">How Kurir Pintar Traceability Works</p>
-            <div className="bg-slate-900 rounded-xl h-64 flex items-center justify-center">
-              <div className="text-center text-slate-500">
-                <Play className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                <p>Demo Video Placeholder</p>
-              </div>
+            <div className="rounded-xl overflow-hidden">
+              <video
+                src={kurirTraceabilityVideo}
+                autoPlay
+                loop
+                muted
+                playsInline
+                controls
+                className="w-full h-auto"
+              />
             </div>
           </motion.div>
         </div>
