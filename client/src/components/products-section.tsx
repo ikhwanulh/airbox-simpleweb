@@ -120,25 +120,25 @@ export default function ProductsSection() {
                   
                   <div className={`bg-gradient-to-br ${colors.gradient} p-8 flex items-center justify-center ${!isEven ? "lg:col-start-1" : ""}`}>
                     {product.id === 1 ? (
-                      <div className="w-full h-64 rounded-lg overflow-hidden">
+                      <div className="w-full rounded-lg overflow-hidden">
                         <video
                           src={dashboardVideo}
                           autoPlay
                           loop
                           muted
                           playsInline
-                          className="w-full h-full object-cover"
+                          className="w-full h-auto object-contain rounded-lg"
                         />
                       </div>
                     ) : product.id === 2 ? (
-                      <div className="w-full h-64 rounded-lg overflow-hidden">
+                      <div className="w-full rounded-lg overflow-hidden">
                         <video
                           src={kurirPintarVideo}
                           autoPlay
                           loop
                           muted
                           playsInline
-                          className="w-full h-full object-cover"
+                          className="w-full h-auto object-contain rounded-lg"
                         />
                       </div>
                     ) : (
