@@ -69,3 +69,14 @@ Preferred communication style: Simple, everyday language.
 
 ## Session Management
 - **connect-pg-simple**: PostgreSQL session store for Express sessions (configured but not actively used)
+
+## Email Configuration
+- **Contact Form Email**: The contact form sends emails to ikhwanul.h@gmail.com
+- **SMTP Setup Required**: To enable actual email sending, the following environment variables need to be set:
+  - `SMTP_HOST`: SMTP server hostname (defaults to smtp.gmail.com)
+  - `SMTP_PORT`: SMTP port (defaults to 587)
+  - `SMTP_USER`: SMTP username/email
+  - `SMTP_PASS`: SMTP password or app-specific password
+  - `CONTACT_EMAIL`: Optional override for recipient email (defaults to ikhwanul.h@gmail.com)
+- **Email Subject Format**: `{company}-{fullName}`
+- **Note**: User dismissed Resend integration. If email sending is needed, SMTP credentials must be configured as secrets.

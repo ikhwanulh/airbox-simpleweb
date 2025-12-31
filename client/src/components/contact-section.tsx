@@ -27,20 +27,31 @@ export default function ContactSection() {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for your interest. We'll get back to you within 24 hours.",
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
       
-      setFormData({
-        fullName: "",
-        company: "",
-        email: "",
-        message: "",
-      });
+      const result = await response.json();
+      
+      if (result.success) {
+        toast({
+          title: "Message Sent Successfully!",
+          description: "Thank you for your interest. We'll get back to you within 24 hours.",
+        });
+        
+        setFormData({
+          fullName: "",
+          company: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        throw new Error(result.message);
+      }
     } catch (error) {
       toast({
         title: "Error",
