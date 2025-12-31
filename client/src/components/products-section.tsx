@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { BarChart3, Truck, Users, Calculator } from "lucide-react";
 import { Link } from "wouter";
 import dashboardVideo from "@assets/dashboard_1767145061416.mp4";
+import kurirPintarVideo from "@assets/kurirpintar_1767146203176.mp4";
 
 const products = [
   {
@@ -122,6 +123,17 @@ export default function ProductsSection() {
                       <div className="w-full h-64 rounded-lg overflow-hidden">
                         <video
                           src={dashboardVideo}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                    ) : product.id === 2 ? (
+                      <div className="w-full h-64 rounded-lg overflow-hidden">
+                        <video
+                          src={kurirPintarVideo}
                           autoPlay
                           loop
                           muted
