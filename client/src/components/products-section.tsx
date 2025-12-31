@@ -3,6 +3,8 @@ import { BarChart3, Truck, Users, Calculator } from "lucide-react";
 import { Link } from "wouter";
 import dashboardVideo from "@assets/dashboard_1767145061416.mp4";
 import kurirPintarVideo from "@assets/kurirpintar_1767146203176.mp4";
+import kruVideo from "@assets/KRU_1767147487073.mp4";
+import jurnalVideo from "@assets/jurnal_1767147487071.mp4";
 
 const products = [
   {
@@ -134,6 +136,28 @@ export default function ProductsSection() {
                       <div className="w-full rounded-lg overflow-hidden">
                         <video
                           src={kurirPintarVideo}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </div>
+                    ) : product.id === 3 ? (
+                      <div className="w-full rounded-lg overflow-hidden">
+                        <video
+                          src={kruVideo}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-auto object-contain rounded-lg"
+                        />
+                      </div>
+                    ) : product.id === 4 ? (
+                      <div className="w-full rounded-lg overflow-hidden">
+                        <video
+                          src={jurnalVideo}
                           autoPlay
                           loop
                           muted
