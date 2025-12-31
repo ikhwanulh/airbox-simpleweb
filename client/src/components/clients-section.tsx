@@ -97,7 +97,7 @@ export default function ClientsSection() {
             viewport={{ once: true }}
           >
             <p className="text-slate-600 text-lg">
-              Join hundreds of companies that trust AirBox for their digital transformation journey.
+              Join numerous companies that trust Air Box for their digital transformation journey.
             </p>
           </motion.div>
         </div>
