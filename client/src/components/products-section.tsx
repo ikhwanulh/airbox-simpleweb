@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { BarChart3, Truck, Users, Calculator } from "lucide-react";
 import { Link } from "wouter";
+import dashboardVideo from "@assets/dashboard_1767145061416.mp4";
 
 const products = [
   {
@@ -117,13 +118,26 @@ export default function ProductsSection() {
                   </div>
                   
                   <div className={`bg-gradient-to-br ${colors.gradient} p-8 flex items-center justify-center ${!isEven ? "lg:col-start-1" : ""}`}>
-                    <div className="w-full h-64 bg-white/20 rounded-lg flex items-center justify-center">
-                      <div className="text-center text-white">
-                        <Icon className="w-16 h-16 mb-4 mx-auto" />
-                        <p className="text-lg font-medium">{product.title}</p>
-                        <p className="text-sm opacity-80">Interactive Preview</p>
+                    {product.id === 1 ? (
+                      <div className="w-full h-64 rounded-lg overflow-hidden">
+                        <video
+                          src={dashboardVideo}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                    </div>
+                    ) : (
+                      <div className="w-full h-64 bg-white/20 rounded-lg flex items-center justify-center">
+                        <div className="text-center text-white">
+                          <Icon className="w-16 h-16 mb-4 mx-auto" />
+                          <p className="text-lg font-medium">{product.title}</p>
+                          <p className="text-sm opacity-80">Interactive Preview</p>
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               );
