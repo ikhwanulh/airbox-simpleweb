@@ -1,49 +1,11 @@
 import { motion } from "framer-motion";
 import { BarChart3, Truck, Users, Calculator } from "lucide-react";
 import { Link } from "wouter";
+import { useLanguage } from "@/lib/language-context";
 import dashboardVideo from "@assets/dashboard_1767145061416.mp4";
 import kurirPintarVideo from "@assets/kurirpintar_1767146203176.mp4";
 import kruVideo from "@assets/KRU_1767147487073.mp4";
 import jurnalVideo from "@assets/jurnal_1767147487071.mp4";
-
-const products = [
-  {
-    id: 1,
-    title: "Interactive Dashboard & Task Monitoring",
-    description: "Real-time visualization and monitoring system that provides comprehensive insights into your operations. Track KPIs, monitor task progress, and make data-driven decisions with our intuitive dashboard interface.",
-    icon: BarChart3,
-    color: "blue",
-    tags: ["Real-time Analytics", "Task Management", "KPI Tracking"],
-    link: "/interactive-dashboard",
-  },
-  {
-    id: 2,
-    title: "Kurir Pintar",
-    description: "End-to-end supply chain visibility for logistics and courier operations — integrated with air, sea, and land transport modes. Track shipments, optimize routes, and ensure delivery excellence across all transportation channels.",
-    icon: Truck,
-    color: "green",
-    tags: ["Multi-modal Tracking", "Route Optimization", "Real-time Updates"],
-    link: "/kurir-pintar",
-  },
-  {
-    id: 3,
-    title: "KRU",
-    description: "HRIS solution that simplifies the employment lifecycle for high-volume teams, ensuring compliance and automation. Streamline recruitment, onboarding, payroll, and performance management with intelligent workflows.",
-    icon: Users,
-    color: "purple",
-    tags: ["HR Automation", "Compliance", "Performance Tracking"],
-    link: "/kru",
-  },
-  {
-    id: 4,
-    title: "Jurnal Pintar",
-    description: "Smart accounting system with modular setup, local tax compliance, and support for automation and analytics. Streamline financial operations with intelligent bookkeeping and comprehensive reporting capabilities.",
-    icon: Calculator,
-    color: "orange",
-    tags: ["Tax Compliance", "Automation", "Analytics"],
-    link: "/jurnal-pintar",
-  },
-];
 
 const colorVariants = {
   blue: {
@@ -69,6 +31,47 @@ const colorVariants = {
 };
 
 export default function ProductsSection() {
+  const { t } = useLanguage();
+
+  const products = [
+    {
+      id: 1,
+      titleKey: "products.dashboard.title",
+      descriptionKey: "products.dashboard.description",
+      icon: BarChart3,
+      color: "blue",
+      tagKeys: ["products.dashboard.tag1", "products.dashboard.tag2", "products.dashboard.tag3"],
+      link: "/interactive-dashboard",
+    },
+    {
+      id: 2,
+      titleKey: "products.kurir.title",
+      descriptionKey: "products.kurir.description",
+      icon: Truck,
+      color: "green",
+      tagKeys: ["products.kurir.tag1", "products.kurir.tag2", "products.kurir.tag3"],
+      link: "/kurir-pintar",
+    },
+    {
+      id: 3,
+      titleKey: "products.kru.title",
+      descriptionKey: "products.kru.description",
+      icon: Users,
+      color: "purple",
+      tagKeys: ["products.kru.tag1", "products.kru.tag2", "products.kru.tag3"],
+      link: "/kru",
+    },
+    {
+      id: 4,
+      titleKey: "products.jurnal.title",
+      descriptionKey: "products.jurnal.description",
+      icon: Calculator,
+      color: "orange",
+      tagKeys: ["products.jurnal.tag1", "products.jurnal.tag2", "products.jurnal.tag3"],
+      link: "/jurnal-pintar",
+    },
+  ];
+
   return (
     <section id="products" className="py-20 bg-slate-50">
       <div className="container mx-auto px-6">
@@ -80,10 +83,10 @@ export default function ProductsSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Our Products</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">{t("products.title")}</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Comprehensive digital solutions designed to streamline your operations and drive measurable results.
+              {t("products.subtitle")}
             </p>
           </motion.div>
           
@@ -99,23 +102,23 @@ export default function ProductsSection() {
                     <div className={`${colors.icon} w-16 h-16 rounded-lg flex items-center justify-center mb-6`}>
                       <Icon className="w-8 h-8" />
                     </div>
-                    <h3 className="text-2xl font-bold text-slate-800 mb-4">{product.title}</h3>
+                    <h3 className="text-2xl font-bold text-slate-800 mb-4">{t(product.titleKey)}</h3>
                     <p className="text-slate-600 leading-relaxed mb-6">
-                      {product.description}
+                      {t(product.descriptionKey)}
                     </p>
                     <div className="flex flex-wrap gap-2">
-                      {product.tags.map((tag, tagIndex) => (
+                      {product.tagKeys.map((tagKey, tagIndex) => (
                         <span 
                           key={tagIndex}
                           className={`${colors.tags} px-3 py-1 rounded-full text-sm font-medium`}
                         >
-                          {tag}
+                          {t(tagKey)}
                         </span>
                       ))}
                     </div>
                     {product.link && (
                       <div className="mt-4">
-                        <span className={`${product.color === 'orange' ? 'text-orange-600' : product.color === 'green' ? 'text-green-600' : product.color === 'blue' ? 'text-blue-600' : 'text-purple-600'} font-medium hover:underline`}>Learn More →</span>
+                        <span className={`${product.color === 'orange' ? 'text-orange-600' : product.color === 'green' ? 'text-green-600' : product.color === 'blue' ? 'text-blue-600' : 'text-purple-600'} font-medium hover:underline`}>{t("products.learnMore")}</span>
                       </div>
                     )}
                   </div>
@@ -169,7 +172,7 @@ export default function ProductsSection() {
                       <div className="w-full h-64 bg-white/20 rounded-lg flex items-center justify-center">
                         <div className="text-center text-white">
                           <Icon className="w-16 h-16 mb-4 mx-auto" />
-                          <p className="text-lg font-medium">{product.title}</p>
+                          <p className="text-lg font-medium">{t(product.titleKey)}</p>
                           <p className="text-sm opacity-80">Interactive Preview</p>
                         </div>
                       </div>
@@ -187,6 +190,7 @@ export default function ProductsSection() {
                     transition={{ duration: 0.8, delay: index * 0.1 }}
                     viewport={{ once: true }}
                     whileHover={{ y: -5 }}
+                    data-testid={`card-product-${product.id}`}
                   >
                     {cardContent}
                   </motion.div>
@@ -200,6 +204,7 @@ export default function ProductsSection() {
                   transition={{ duration: 0.8, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ y: -5 }}
+                  data-testid={`card-product-${product.id}`}
                 >
                   {cardContent}
                 </motion.div>

@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowLeft, Award, Users, Code, Briefcase } from "lucide-react";
+import { ArrowLeft, Briefcase, Code } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useLanguage } from "@/lib/language-context";
 import ContactModal from "@/components/contact-modal";
 
 const businessExperts = [
@@ -41,7 +42,7 @@ const techExperts = [
   },
 ];
 
-function TeamMemberCard({ member, index }: { member: any; index: number }) {
+function TeamMemberCard({ member, index, t }: { member: any; index: number; t: (key: string) => string }) {
   return (
     <motion.div
       initial={{ y: 50, opacity: 0 }}
@@ -64,12 +65,12 @@ function TeamMemberCard({ member, index }: { member: any; index: number }) {
         
         <div className="space-y-4">
           <div>
-            <h4 className="text-sm font-semibold text-slate-600 mb-2">Experience</h4>
+            <h4 className="text-sm font-semibold text-slate-600 mb-2">{t("team.experience")}</h4>
             <p className="text-slate-700 leading-relaxed">{member.experience}</p>
           </div>
           
           <div>
-            <h4 className="text-sm font-semibold text-slate-600 mb-2">Expertise</h4>
+            <h4 className="text-sm font-semibold text-slate-600 mb-2">{t("team.expertise")}</h4>
             <div className="flex flex-wrap gap-2">
               {member.expertise.map((skill: string, skillIndex: number) => (
                 <span
@@ -88,26 +89,25 @@ function TeamMemberCard({ member, index }: { member: any; index: number }) {
 }
 
 export default function Team() {
+  const { t } = useLanguage();
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-slate-50">
-      {/* Navigation */}
       <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
               <Button variant="ghost" className="flex items-center space-x-2">
                 <ArrowLeft className="w-4 h-4" />
-                <span>Back to Home</span>
+                <span>{t("backToHome")}</span>
               </Button>
             </Link>
-            <h1 className="text-xl font-semibold text-slate-800">Our Team</h1>
+            <h1 className="text-xl font-semibold text-slate-800">{t("team.title")}</h1>
           </div>
         </div>
       </nav>
 
-      {/* Hero Section */}
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="container mx-auto px-6 text-center">
           <motion.div
@@ -115,15 +115,14 @@ export default function Team() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">Meet Our Team</h1>
+            <h1 className="text-4xl md:text-6xl font-bold mb-6">{t("team.hero.title")}</h1>
             <p className="text-xl md:text-2xl opacity-90 max-w-3xl mx-auto">
-              Expert professionals driving digital transformation with deep industry knowledge and technical excellence.
+              {t("team.hero.subtitle")}
             </p>
           </motion.div>
         </div>
       </section>
 
-      {/* Business Experts Section */}
       <section className="py-20">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
@@ -139,23 +138,22 @@ export default function Team() {
                   <Briefcase className="w-8 h-8 text-blue-600" />
                 </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Business Experts</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">{t("team.business.title")}</h2>
               <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
               <p className="text-xl text-slate-600">
-                Strategic leaders with deep industry experience and proven track records in business transformation.
+                {t("team.business.subtitle")}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
               {businessExperts.map((member, index) => (
-                <TeamMemberCard key={member.name} member={member} index={index} />
+                <TeamMemberCard key={member.name} member={member} index={index} t={t} />
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* Tech Experts Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-6">
           <div className="max-w-6xl mx-auto">
@@ -171,23 +169,22 @@ export default function Team() {
                   <Code className="w-8 h-8 text-green-600" />
                 </div>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">Tech Experts</h2>
+              <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">{t("team.tech.title")}</h2>
               <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
               <p className="text-xl text-slate-600">
-                Technical innovators with extensive software engineering experience and cutting-edge expertise.
+                {t("team.tech.subtitle")}
               </p>
             </motion.div>
 
             <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               {techExperts.map((member, index) => (
-                <TeamMemberCard key={member.name} member={member} index={index} />
+                <TeamMemberCard key={member.name} member={member} index={index} t={t} />
               ))}
             </div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="py-20 bg-slate-800 text-white">
         <div className="container mx-auto px-6 text-center">
           <motion.div
@@ -196,21 +193,21 @@ export default function Team() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Work with Us?</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">{t("team.cta.title")}</h2>
             <p className="text-xl opacity-90 mb-8 max-w-2xl mx-auto">
-              Our team combines business acumen with technical expertise to deliver transformative digital solutions.
+              {t("team.cta.subtitle")}
             </p>
             <Button 
               onClick={() => setIsContactModalOpen(true)}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 text-lg"
+              data-testid="button-get-in-touch"
             >
-              Get in Touch
+              {t("team.cta.button")}
             </Button>
           </motion.div>
         </div>
       </section>
 
-      {/* Contact Modal */}
       <ContactModal 
         isOpen={isContactModalOpen} 
         onClose={() => setIsContactModalOpen(false)} 

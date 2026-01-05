@@ -2,21 +2,23 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import { useLanguage } from "@/lib/language-context";
 
 export default function PrivacyPolicy() {
+  const { t } = useLanguage();
+
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
       <nav className="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <Link href="/">
               <Button variant="ghost" className="flex items-center space-x-2">
                 <ArrowLeft className="w-4 h-4" />
-                <span>Back to Home</span>
+                <span>{t("backToHome")}</span>
               </Button>
             </Link>
-            <h1 className="text-xl font-semibold text-slate-800">Privacy Policy</h1>
+            <h1 className="text-xl font-semibold text-slate-800">{t("footer.privacyPolicy")}</h1>
           </div>
         </div>
       </nav>

@@ -1,10 +1,13 @@
 import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { FileText, CheckCircle, AlertTriangle, Lightbulb, Search, Shield, BookOpen, ArrowRight } from "lucide-react";
+import { FileText, CheckCircle, AlertTriangle, Lightbulb, Search, Shield, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
+import { useLanguage } from "@/lib/language-context";
 import jurnalImage from "@assets/JurnalPintar_1766991464656.png";
 
 export default function JurnalPintarPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -18,7 +21,7 @@ export default function JurnalPintarPage() {
               <span className="text-white font-bold text-xl cursor-pointer">Air Box Teknologi</span>
             </Link>
             <Link href="/">
-              <span className="text-slate-300 hover:text-white transition-colors cursor-pointer">← Back to Home</span>
+              <span className="text-slate-300 hover:text-white transition-colors cursor-pointer">{t("backToHome")}</span>
             </Link>
           </div>
         </div>
@@ -33,13 +36,13 @@ export default function JurnalPintarPage() {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block bg-orange-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-                Smart Accounting
+                {t("jurnal.badge")}
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Financial Numbers You and Your Investors Can Trust
+                {t("jurnal.hero.title")}
               </h1>
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                Jurnal Pintar is an enterprise grade accounting system designed to assist you to produce transparent, consistent, and funder-ready financial reports.
+                {t("jurnal.hero.description")}
               </p>
               <a
                 href="https://form.jotform.com/253629031154048"
@@ -49,7 +52,7 @@ export default function JurnalPintarPage() {
                 data-testid="button-check-trust-score"
               >
                 <Shield className="w-5 h-5" />
-                Check Your Investor Trust Score
+                {t("jurnal.hero.cta")}
               </a>
             </motion.div>
 
@@ -85,27 +88,27 @@ export default function JurnalPintarPage() {
                 <AlertTriangle className="w-8 h-8 text-red-600" />
               </div>
               <h2 className="text-2xl font-bold text-slate-800 mb-4">
-                Neat Numbers Are Not the Same as Trusted Numbers
+                {t("jurnal.problem.title")}
               </h2>
-              <p className="text-slate-600 mb-6">Many companies struggle with:</p>
+              <p className="text-slate-600 mb-6">{t("jurnal.problem.subtitle")}</p>
               
               <div className="space-y-4 mb-6">
                 <div className="flex items-center gap-4 bg-red-50 p-4 rounded-lg">
                   <Search className="w-6 h-6 text-red-600 flex-shrink-0" />
-                  <span className="text-red-800">Poor traceability</span>
+                  <span className="text-red-800">{t("jurnal.problem.item1")}</span>
                 </div>
                 <div className="flex items-center gap-4 bg-red-50 p-4 rounded-lg">
                   <FileText className="w-6 h-6 text-red-600 flex-shrink-0" />
-                  <span className="text-red-800">Founder-dependent reporting</span>
+                  <span className="text-red-800">{t("jurnal.problem.item2")}</span>
                 </div>
                 <div className="flex items-center gap-4 bg-red-50 p-4 rounded-lg">
                   <Shield className="w-6 h-6 text-red-600 flex-shrink-0" />
-                  <span className="text-red-800">Unpreparedness for due diligence</span>
+                  <span className="text-red-800">{t("jurnal.problem.item3")}</span>
                 </div>
               </div>
 
               <p className="text-red-700 font-semibold italic">
-                Internal reports do not automatically earn external trust.
+                {t("jurnal.problem.warning")}
               </p>
             </motion.div>
 
@@ -120,36 +123,36 @@ export default function JurnalPintarPage() {
                 <Lightbulb className="w-8 h-8 text-green-600" />
               </div>
               <h2 className="text-2xl font-bold text-slate-800 mb-6">
-                Smart Accounting Built for External Scrutiny
+                {t("jurnal.solution.title")}
               </h2>
               
               <div className="space-y-6">
                 <div className="flex gap-4">
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-slate-800">System-assisted transaction classification</h3>
-                    <p className="text-slate-600 text-sm">Automated categorization for accuracy</p>
+                    <h3 className="font-semibold text-slate-800">{t("jurnal.solution.item1.title")}</h3>
+                    <p className="text-slate-600 text-sm">{t("jurnal.solution.item1.desc")}</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-slate-800">Full audit trail, connected to bank transaction record</h3>
-                    <p className="text-slate-600 text-sm">Complete transparency and traceability</p>
+                    <h3 className="font-semibold text-slate-800">{t("jurnal.solution.item2.title")}</h3>
+                    <p className="text-slate-600 text-sm">{t("jurnal.solution.item2.desc")}</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-slate-800">Consistent chart of accounts</h3>
-                    <p className="text-slate-600 text-sm">Standardized financial structure</p>
+                    <h3 className="font-semibold text-slate-800">{t("jurnal.solution.item3.title")}</h3>
+                    <p className="text-slate-600 text-sm">{t("jurnal.solution.item3.desc")}</p>
                   </div>
                 </div>
                 <div className="flex gap-4">
                   <CheckCircle className="w-6 h-6 text-green-500 flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-semibold text-slate-800">Bank and investor readiness</h3>
-                    <p className="text-slate-600 text-sm">Prepared for external review at any time</p>
+                    <h3 className="font-semibold text-slate-800">{t("jurnal.solution.item4.title")}</h3>
+                    <p className="text-slate-600 text-sm">{t("jurnal.solution.item4.desc")}</p>
                   </div>
                 </div>
               </div>
@@ -167,13 +170,13 @@ export default function JurnalPintarPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Numbers That Cannot Be Explained Cannot Be Trusted
+              {t("jurnal.value.title")}
             </h2>
             <p className="text-xl text-slate-300 mb-2">
-              Investors do not look for perfect numbers.
+              {t("jurnal.value.subtitle")}
             </p>
             <p className="text-2xl text-orange-400 font-semibold">
-              They look for defensible numbers.
+              {t("jurnal.value.highlight")}
             </p>
           </motion.div>
         </div>
@@ -189,10 +192,10 @@ export default function JurnalPintarPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-              Activation Process
+              {t("jurnal.activation.title")}
             </h2>
             <p className="text-xl text-slate-600">
-              Your path to investor-ready financials
+              {t("jurnal.activation.subtitle")}
             </p>
           </motion.div>
 
@@ -207,8 +210,8 @@ export default function JurnalPintarPage() {
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-orange-600">1</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">Investor Trust Diagnostic</h3>
-              <p className="text-slate-600 text-sm">Assess your current financial reporting readiness</p>
+              <h3 className="text-lg font-bold text-slate-800 mb-2">{t("jurnal.activation.step1.title")}</h3>
+              <p className="text-slate-600 text-sm">{t("jurnal.activation.step1.desc")}</p>
             </motion.div>
 
             <motion.div
@@ -221,8 +224,8 @@ export default function JurnalPintarPage() {
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-orange-600">2</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">Funder-Grade Walkthrough</h3>
-              <p className="text-slate-600 text-sm">Review your books with investor-level scrutiny</p>
+              <h3 className="text-lg font-bold text-slate-800 mb-2">{t("jurnal.activation.step2.title")}</h3>
+              <p className="text-slate-600 text-sm">{t("jurnal.activation.step2.desc")}</p>
             </motion.div>
 
             <motion.div
@@ -235,8 +238,8 @@ export default function JurnalPintarPage() {
               <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-orange-600">3</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">Implementation</h3>
-              <p className="text-slate-600 text-sm">Deploy Jurnal Pintar for your organization</p>
+              <h3 className="text-lg font-bold text-slate-800 mb-2">{t("jurnal.activation.step3.title")}</h3>
+              <p className="text-slate-600 text-sm">{t("jurnal.activation.step3.desc")}</p>
             </motion.div>
           </div>
         </div>
@@ -251,10 +254,10 @@ export default function JurnalPintarPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Build Investor Trust?
+              {t("jurnal.cta.title")}
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              Start your journey to funder-ready financial reports
+              {t("jurnal.cta.subtitle")}
             </p>
             <a
               href="https://form.jotform.com/253629031154048"
@@ -263,7 +266,7 @@ export default function JurnalPintarPage() {
               className="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-orange-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
               data-testid="button-start-trust-assessment"
             >
-              Start Trust Assessment
+              {t("jurnal.cta.button")}
               <ArrowRight className="w-5 h-5" />
             </a>
           </motion.div>
@@ -272,7 +275,7 @@ export default function JurnalPintarPage() {
 
       <footer className="bg-slate-900 py-8 px-6 border-t border-slate-800">
         <div className="container mx-auto text-center">
-          <p className="text-slate-400">© 2024 Air Box Teknologi. All rights reserved.</p>
+          <p className="text-slate-400">{t("footer.rights")}</p>
         </div>
       </footer>
     </div>

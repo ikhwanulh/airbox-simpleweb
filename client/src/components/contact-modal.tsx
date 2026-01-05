@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/lib/language-context";
 
 interface ContactModalProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ interface ContactModalProps {
 }
 
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     fullName: "",
     company: "",
@@ -32,26 +34,37 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     setIsSubmitting(true);
 
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      toast({
-        title: "Message Sent Successfully!",
-        description: "Thank you for your interest. We'll get back to you within 24 hours.",
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
       
-      setFormData({
-        fullName: "",
-        company: "",
-        email: "",
-        message: "",
-      });
+      const result = await response.json();
       
-      onClose();
+      if (result.success) {
+        toast({
+          title: t("contact.toast.success.title"),
+          description: t("contact.toast.success.description"),
+        });
+        
+        setFormData({
+          fullName: "",
+          company: "",
+          email: "",
+          message: "",
+        });
+        
+        onClose();
+      } else {
+        throw new Error(result.message);
+      }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
+        title: t("contact.toast.error.title"),
+        description: t("contact.toast.error.description"),
         variant: "destructive",
       });
     } finally {
@@ -63,7 +76,6 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     <AnimatePresence>
       {isOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center">
-          {/* Backdrop */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -72,36 +84,34 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
             onClick={onClose}
           />
           
-          {/* Modal */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             className="relative bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 max-h-[90vh] overflow-y-auto"
           >
-            {/* Header */}
             <div className="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-6 rounded-t-2xl">
               <div className="flex items-center justify-between">
                 <div>
-                  <h2 className="text-2xl font-bold mb-2">Send Us a Message</h2>
-                  <p className="text-blue-100">Let's start the conversation</p>
+                  <h2 className="text-2xl font-bold mb-2">{t("contact.sendMessage")}</h2>
+                  <p className="text-blue-100">{t("contact.subtitle")}</p>
                 </div>
                 <button
                   onClick={onClose}
                   className="text-white hover:text-blue-200 transition-colors"
+                  data-testid="button-close-modal"
                 >
                   <X className="w-6 h-6" />
                 </button>
               </div>
             </div>
 
-            {/* Form */}
             <div className="p-6">
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
                   <Label htmlFor="fullName" className="flex items-center space-x-2 mb-2">
                     <User className="w-4 h-4 text-blue-600" />
-                    <span>Full Name</span>
+                    <span>{t("contact.form.fullName")}</span>
                   </Label>
                   <Input
                     id="fullName"
@@ -109,16 +119,17 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     type="text"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    placeholder="Enter your full name"
+                    placeholder={t("contact.form.fullNamePlaceholder")}
                     required
                     className="w-full"
+                    data-testid="modal-input-fullname"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="company" className="flex items-center space-x-2 mb-2">
                     <Building className="w-4 h-4 text-blue-600" />
-                    <span>Company</span>
+                    <span>{t("contact.form.company")}</span>
                   </Label>
                   <Input
                     id="company"
@@ -126,16 +137,17 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     type="text"
                     value={formData.company}
                     onChange={handleInputChange}
-                    placeholder="Your company name"
+                    placeholder={t("contact.form.companyPlaceholder")}
                     required
                     className="w-full"
+                    data-testid="modal-input-company"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="email" className="flex items-center space-x-2 mb-2">
                     <Mail className="w-4 h-4 text-blue-600" />
-                    <span>Email Address</span>
+                    <span>{t("contact.email")}</span>
                   </Label>
                   <Input
                     id="email"
@@ -143,26 +155,28 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     type="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="your.email@company.com"
+                    placeholder={t("contact.form.emailPlaceholder")}
                     required
                     className="w-full"
+                    data-testid="modal-input-email"
                   />
                 </div>
 
                 <div>
                   <Label htmlFor="message" className="flex items-center space-x-2 mb-2">
                     <MessageSquare className="w-4 h-4 text-blue-600" />
-                    <span>Message</span>
+                    <span>{t("contact.form.message")}</span>
                   </Label>
                   <Textarea
                     id="message"
                     name="message"
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Tell us about your project or how we can help..."
+                    placeholder={t("contact.form.messagePlaceholder")}
                     required
                     rows={4}
                     className="w-full resize-none"
+                    data-testid="modal-input-message"
                   />
                 </div>
 
@@ -173,6 +187,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     onClick={onClose}
                     className="flex-1"
                     disabled={isSubmitting}
+                    data-testid="button-cancel"
                   >
                     Cancel
                   </Button>
@@ -180,8 +195,9 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     type="submit"
                     className="flex-1 bg-blue-600 hover:bg-blue-700"
                     disabled={isSubmitting}
+                    data-testid="button-submit-modal"
                   >
-                    {isSubmitting ? "Sending..." : "Send Message"}
+                    {isSubmitting ? t("contact.form.sending") : t("contact.form.send")}
                   </Button>
                 </div>
               </form>

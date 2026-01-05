@@ -1,9 +1,12 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/lib/language-context";
 import airboxLogo from "@assets/airbox white_1754038254518.png";
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -15,7 +18,6 @@ export default function HeroSection() {
     <section id="home" className="min-h-screen gradient-bg flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-black/20"></div>
       
-      {/* Floating geometric shapes */}
       <motion.div 
         className="absolute top-20 left-20 w-20 h-20 border-2 border-white/30 rounded-lg"
         animate={{ y: [-20, 20, -20] }}
@@ -58,7 +60,7 @@ export default function HeroSection() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Empowering logistics and workforce transformation with metrics-driven digital solutions.
+            {t("hero.tagline")}
           </motion.p>
           
           <motion.div 
@@ -71,16 +73,18 @@ export default function HeroSection() {
               onClick={() => scrollToSection("consultation")}
               className="bg-white text-blue-600 px-8 py-4 text-lg font-semibold hover:bg-slate-100 transition-all duration-300 transform hover:scale-105"
               size="lg"
+              data-testid="button-start-consultation"
             >
-              Start Consultation
+              {t("hero.startConsultation")}
             </Button>
             <Button 
               onClick={() => scrollToSection("products")}
               variant="outline"
               className="border-2 border-white text-white bg-transparent px-8 py-4 text-lg font-semibold hover:bg-white hover:text-blue-600 transition-all duration-300"
               size="lg"
+              data-testid="button-view-products"
             >
-              View Products
+              {t("hero.viewProducts")}
             </Button>
           </motion.div>
         </div>

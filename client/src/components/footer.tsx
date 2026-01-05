@@ -1,6 +1,9 @@
+import { useLanguage } from "@/lib/language-context";
 import airboxLogo from "@assets/airbox white_1754038254518.png";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-slate-800 text-white py-12">
       <div className="container mx-auto px-6">
@@ -12,20 +15,20 @@ export default function Footer() {
               </div>
               <div>
                 <h3 className="text-xl font-bold">Air Box Teknologi</h3>
-                <p className="text-slate-400 text-sm">Digital Solutions</p>
+                <p className="text-slate-400 text-sm">{t("footer.digitalSolutions")}</p>
               </div>
             </div>
             
             <div className="text-center">
-              <p className="text-slate-400">© 2024 Air Box Teknologi. All rights reserved.</p>
+              <p className="text-slate-400">{t("footer.rights")}</p>
             </div>
             
             <div className="flex justify-end space-x-6">
-              <a href="/privacy-policy" className="text-slate-400 hover:text-white transition-colors">
-                Privacy Policy
+              <a href="/privacy-policy" className="text-slate-400 hover:text-white transition-colors" data-testid="link-privacy-policy">
+                {t("footer.privacyPolicy")}
               </a>
-              <a href="/team" className="text-slate-400 hover:text-white transition-colors">
-                Team Members
+              <a href="/team" className="text-slate-400 hover:text-white transition-colors" data-testid="link-team">
+                {t("footer.teamMembers")}
               </a>
             </div>
           </div>

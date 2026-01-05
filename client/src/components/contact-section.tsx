@@ -6,8 +6,10 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { useLanguage } from "@/lib/language-context";
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     fullName: "",
     company: "",
@@ -39,8 +41,8 @@ export default function ContactSection() {
       
       if (result.success) {
         toast({
-          title: "Message Sent Successfully!",
-          description: "Thank you for your interest. We'll get back to you within 24 hours.",
+          title: t("contact.toast.success.title"),
+          description: t("contact.toast.success.description"),
         });
         
         setFormData({
@@ -54,8 +56,8 @@ export default function ContactSection() {
       }
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again later.",
+        title: t("contact.toast.error.title"),
+        description: t("contact.toast.error.description"),
         variant: "destructive",
       });
     } finally {
@@ -81,9 +83,9 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Contact Us</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">{t("contact.title")}</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-xl text-slate-600">Ready to transform your business? Let's start the conversation.</p>
+            <p className="text-xl text-slate-600">{t("contact.subtitle")}</p>
           </motion.div>
           
           <div className="grid lg:grid-cols-2 gap-12">
@@ -95,7 +97,7 @@ export default function ContactSection() {
               viewport={{ once: true }}
             >
               <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-slate-800 mb-6">Get in Touch</h3>
+                <h3 className="text-2xl font-bold text-slate-800 mb-6">{t("contact.getInTouch")}</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start space-x-4">
@@ -103,7 +105,7 @@ export default function ContactSection() {
                       <MapPin className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">Office Address</h4>
+                      <h4 className="font-semibold text-slate-800 mb-1">{t("contact.officeAddress")}</h4>
                       <p className="text-slate-600">
                         Ruko City Square C16,<br />
                         Jl. Abdul Rahman Saleh No. 9, Bandung
@@ -116,7 +118,7 @@ export default function ContactSection() {
                       <Phone className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">Phone</h4>
+                      <h4 className="font-semibold text-slate-800 mb-1">{t("contact.phone")}</h4>
                       <p className="text-slate-600">(+62) 81-1238-8055</p>
                     </div>
                   </div>
@@ -126,7 +128,7 @@ export default function ContactSection() {
                       <Mail className="w-5 h-5 text-blue-600" />
                     </div>
                     <div>
-                      <h4 className="font-semibold text-slate-800 mb-1">Email</h4>
+                      <h4 className="font-semibold text-slate-800 mb-1">{t("contact.email")}</h4>
                       <p className="text-slate-600">contact@airbox.co.id</p>
                     </div>
                   </div>
@@ -134,15 +136,16 @@ export default function ContactSection() {
               </div>
               
               <div className="bg-gradient-to-r from-blue-600 to-blue-700 rounded-2xl p-8 text-white">
-                <h3 className="text-xl font-bold mb-4">Ready to Get Started?</h3>
+                <h3 className="text-xl font-bold mb-4">{t("contact.readyToStart")}</h3>
                 <p className="mb-6 opacity-90">
-                  Book a free consultation with our experts and discover how AirBox can transform your operations.
+                  {t("contact.readyToStartDesc")}
                 </p>
                 <Button
                   onClick={() => scrollToSection("consultation")}
                   className="bg-white text-blue-600 hover:bg-slate-100 font-semibold"
+                  data-testid="button-book-consultation"
                 >
-                  Book Free Consultation
+                  {t("contact.bookFreeConsultation")}
                 </Button>
               </div>
             </motion.div>
@@ -155,59 +158,63 @@ export default function ContactSection() {
               viewport={{ once: true }}
             >
               <div className="bg-blue-600 text-white p-6">
-                <h3 className="text-xl font-bold">Send us a Message</h3>
+                <h3 className="text-xl font-bold">{t("contact.sendMessage")}</h3>
               </div>
               
               <form onSubmit={handleSubmit} className="p-6 space-y-4">
                 <div>
-                  <Label htmlFor="fullName">Full Name</Label>
+                  <Label htmlFor="fullName">{t("contact.form.fullName")}</Label>
                   <Input
                     id="fullName"
                     name="fullName"
                     type="text"
                     value={formData.fullName}
                     onChange={handleInputChange}
-                    placeholder="Your full name"
+                    placeholder={t("contact.form.fullNamePlaceholder")}
                     required
+                    data-testid="input-fullname"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="company">Company</Label>
+                  <Label htmlFor="company">{t("contact.form.company")}</Label>
                   <Input
                     id="company"
                     name="company"
                     type="text"
                     value={formData.company}
                     onChange={handleInputChange}
-                    placeholder="Your company name"
+                    placeholder={t("contact.form.companyPlaceholder")}
                     required
+                    data-testid="input-company"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="email">Email</Label>
+                  <Label htmlFor="email">{t("contact.email")}</Label>
                   <Input
                     id="email"
                     name="email"
                     type="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    placeholder="your.email@company.com"
+                    placeholder={t("contact.form.emailPlaceholder")}
                     required
+                    data-testid="input-email"
                   />
                 </div>
                 
                 <div>
-                  <Label htmlFor="message">Message</Label>
+                  <Label htmlFor="message">{t("contact.form.message")}</Label>
                   <Textarea
                     id="message"
                     name="message"
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    placeholder="Tell us about your project..."
+                    placeholder={t("contact.form.messagePlaceholder")}
                     required
+                    data-testid="input-message"
                   />
                 </div>
                 
@@ -215,8 +222,9 @@ export default function ContactSection() {
                   type="submit"
                   disabled={isSubmitting}
                   className="w-full bg-blue-600 hover:bg-blue-700"
+                  data-testid="button-send-message"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? t("contact.form.sending") : t("contact.form.send")}
                 </Button>
               </form>
             </motion.div>

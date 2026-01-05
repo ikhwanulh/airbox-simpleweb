@@ -1,8 +1,10 @@
 import { motion } from "framer-motion";
 import { Bot } from "lucide-react";
-import AIchatbot from "@/components/ai-chatbot";
+import { useLanguage } from "@/lib/language-context";
 
 export default function ConsultationSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="consultation" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -14,7 +16,7 @@ export default function ConsultationSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Strategic Consultation</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">{t("consultation.title")}</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
           </motion.div>
           
@@ -27,18 +29,18 @@ export default function ConsultationSection() {
               viewport={{ once: true }}
             >
               <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-8 rounded-2xl">
-                <h3 className="text-2xl font-semibold text-slate-800 mb-4">Our Approach</h3>
+                <h3 className="text-2xl font-semibold text-slate-800 mb-4">{t("consultation.approach.title")}</h3>
                 <p className="text-lg text-slate-600 leading-relaxed">
-                  We begin by helping organizations clarify their strategic objectives, design metric trees, and assess their data pipeline readiness — before we offer any digital products. This ensures our solutions are relevant, effective, and tailored to your business context.
+                  {t("consultation.approach.description")}
                 </p>
               </div>
               
               <div className="bg-blue-600 text-white p-8 rounded-2xl">
                 <h4 className="text-xl font-semibold mb-4 flex items-center">
                   <Bot className="w-6 h-6 mr-3" />
-                  Chat with our smart consultant here:
+                  {t("consultation.chat.title")}
                 </h4>
-                <p className="text-blue-200">Get instant insights and recommendations for your digital transformation journey.</p>
+                <p className="text-blue-200">{t("consultation.chat.subtitle")}</p>
               </div>
             </motion.div>
             

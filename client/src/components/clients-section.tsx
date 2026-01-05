@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useLanguage } from "@/lib/language-context";
 import airBoxLogistics from "@assets/Air Box Logistics_1754476243899.png";
 import airBoxPersonalia from "@assets/Air Box Personalia_1754476243901.png";
 import beenshine from "@assets/Beenshine_1754476243901.png";
@@ -39,6 +40,8 @@ const clients = [
 ];
 
 export default function ClientsSection() {
+  const { t } = useLanguage();
+
   return (
     <section id="clients" className="py-20 bg-white">
       <div className="container mx-auto px-6">
@@ -50,9 +53,9 @@ export default function ClientsSection() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">Our Trusted Clients</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-800 mb-6">{t("clients.title")}</h2>
             <div className="w-24 h-1 bg-blue-600 mx-auto mb-8"></div>
-            <p className="text-xl text-slate-600">Partnering with industry leaders to drive digital transformation.</p>
+            <p className="text-xl text-slate-600">{t("clients.subtitle")}</p>
           </motion.div>
           
           <motion.div 
@@ -63,7 +66,6 @@ export default function ClientsSection() {
             viewport={{ once: true }}
           >
             <div className="flex space-x-12 client-scroll">
-              {/* First set of clients */}
               {clients.map((client, index) => (
                 <div key={`first-${index}`} className="flex-shrink-0 w-48 h-28 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center border-2 border-blue-100 p-5">
                   <img 
@@ -75,7 +77,6 @@ export default function ClientsSection() {
                 </div>
               ))}
               
-              {/* Duplicate set for seamless loop */}
               {clients.map((client, index) => (
                 <div key={`second-${index}`} className="flex-shrink-0 w-48 h-28 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow flex items-center justify-center border-2 border-blue-100 p-5">
                   <img 
@@ -97,7 +98,7 @@ export default function ClientsSection() {
             viewport={{ once: true }}
           >
             <p className="text-slate-600 text-lg">
-              Join numerous companies that trust Air Box for their digital transformation journey.
+              {t("clients.cta")}
             </p>
           </motion.div>
         </div>

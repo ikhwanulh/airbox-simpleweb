@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import { Home, MessageCircle, Package, Users, Mail, Menu } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navigationItems = [
-  { id: "home", icon: Home, label: "Home" },
-  { id: "consultation", icon: MessageCircle, label: "Consultation" },
-  { id: "products", icon: Package, label: "Products" },
-  { id: "clients", icon: Users, label: "Clients" },
-  { id: "contact", icon: Mail, label: "Contact" },
-];
+import { useLanguage } from "@/lib/language-context";
 
 export default function LeftNavigation() {
+  const { t } = useLanguage();
   const [activeSection, setActiveSection] = useState("home");
   const [isExpanded, setIsExpanded] = useState(false);
+
+  const navigationItems = [
+    { id: "home", icon: Home, labelKey: "nav.home" },
+    { id: "consultation", icon: MessageCircle, labelKey: "nav.consultation" },
+    { id: "products", icon: Package, labelKey: "nav.products" },
+    { id: "clients", icon: Users, labelKey: "nav.clients" },
+    { id: "contact", icon: Mail, labelKey: "nav.contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -40,7 +42,7 @@ export default function LeftNavigation() {
     if (element) {
       element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-    setIsExpanded(false); // Collapse after navigation
+    setIsExpanded(false);
   };
 
   return (
@@ -53,17 +55,16 @@ export default function LeftNavigation() {
         onHoverStart={() => setIsExpanded(true)}
         onHoverEnd={() => setIsExpanded(false)}
       >
-        {/* Menu Toggle Button */}
         <motion.button
           onClick={() => setIsExpanded(!isExpanded)}
           className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition-colors relative z-10"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
+          data-testid="button-nav-menu"
         >
           <Menu className="w-5 h-5" />
         </motion.button>
 
-        {/* Navigation Items */}
         <AnimatePresence>
           {isExpanded && (
             <motion.div
@@ -74,9 +75,10 @@ export default function LeftNavigation() {
               className="absolute top-0 left-0 bg-white/95 backdrop-blur-sm rounded-full shadow-lg border border-slate-200 pt-14 pb-2"
             >
               <div className="space-y-1 px-2">
-                {navigationItems.map((item) => {
+                {navigationItems.map((item, index) => {
                   const Icon = item.icon;
                   const isActive = activeSection === item.id;
+                  const label = t(item.labelKey);
                   
                   return (
                     <motion.button
@@ -89,16 +91,16 @@ export default function LeftNavigation() {
                       }`}
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
-                      title={item.label}
+                      title={label}
                       initial={{ scale: 0, opacity: 0 }}
                       animate={{ scale: 1, opacity: 1 }}
-                      transition={{ delay: navigationItems.indexOf(item) * 0.05 }}
+                      transition={{ delay: index * 0.05 }}
+                      data-testid={`button-nav-${item.id}`}
                     >
                       <Icon className="w-4 h-4 mx-auto" />
                       
-                      {/* Tooltip */}
                       <div className="absolute left-full ml-3 px-2 py-1 bg-slate-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200 whitespace-nowrap">
-                        {item.label}
+                        {label}
                       </div>
                     </motion.button>
                   );

@@ -2,8 +2,11 @@ import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { BarChart3, CheckCircle, AlertTriangle, Clock, Users, Target, Layers, Eye, ArrowRight, ExternalLink, Activity, TrendingUp } from "lucide-react";
 import { Link } from "wouter";
+import { useLanguage } from "@/lib/language-context";
 
 export default function InteractiveDashboardPage() {
+  const { t } = useLanguage();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -17,7 +20,7 @@ export default function InteractiveDashboardPage() {
               <span className="text-white font-bold text-xl cursor-pointer">Air Box Teknologi</span>
             </Link>
             <Link href="/">
-              <span className="text-slate-300 hover:text-white transition-colors cursor-pointer">← Back to Home</span>
+              <span className="text-slate-300 hover:text-white transition-colors cursor-pointer">{t("backToHome")}</span>
             </Link>
           </div>
         </div>
@@ -32,13 +35,13 @@ export default function InteractiveDashboardPage() {
               transition={{ duration: 0.8 }}
             >
               <span className="inline-block bg-blue-600 text-white px-4 py-2 rounded-full text-sm font-medium mb-6">
-                Operational Intelligence System
+                {t("dashboard.badge")}
               </span>
               <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-                Real-Time Visibility. Actionable Control. One Source of Truth.
+                {t("dashboard.hero.title")}
               </h1>
               <p className="text-xl text-slate-300 mb-8 leading-relaxed">
-                ABT Interactive Dashboard & Task Monitoring is a real-time operational intelligence system that transforms raw operational data into clear, actionable insights — enabling leaders to monitor KPIs, track execution, and make decisions with confidence.
+                {t("dashboard.hero.description")}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <a
@@ -49,7 +52,7 @@ export default function InteractiveDashboardPage() {
                   data-testid="button-run-diagnostic"
                 >
                   <Target className="w-5 h-5" />
-                  Run an Operational Visibility Diagnostic
+                  {t("dashboard.hero.cta")}
                 </a>
                 <a
                   href="https://metabase.airbox.co.id/public/dashboard/79f86bd3-929a-47ae-b1ad-3f0ecd192cf8"
@@ -59,7 +62,7 @@ export default function InteractiveDashboardPage() {
                   data-testid="button-see-capabilities"
                 >
                   <ExternalLink className="w-5 h-5" />
-                  See Dashboard Capabilities
+                  {t("dashboard.hero.capabilities")}
                 </a>
               </div>
             </motion.div>
@@ -81,17 +84,17 @@ export default function InteractiveDashboardPage() {
                     <div className="grid grid-cols-2 gap-4 mb-4">
                       <div className="bg-blue-600/20 rounded-lg p-4 border border-blue-500/30">
                         <TrendingUp className="w-8 h-8 text-blue-400 mb-2" />
-                        <p className="text-blue-300 text-sm">Real-time KPIs</p>
+                        <p className="text-blue-300 text-sm">{t("dashboard.preview.kpis")}</p>
                       </div>
                       <div className="bg-green-600/20 rounded-lg p-4 border border-green-500/30">
                         <Activity className="w-8 h-8 text-green-400 mb-2" />
-                        <p className="text-green-300 text-sm">Live Monitoring</p>
+                        <p className="text-green-300 text-sm">{t("dashboard.preview.monitoring")}</p>
                       </div>
                     </div>
                     <div className="bg-slate-800 rounded-lg p-4">
                       <div className="flex items-center gap-2 mb-3">
                         <BarChart3 className="w-5 h-5 text-blue-400" />
-                        <span className="text-white text-sm">Task Progress</span>
+                        <span className="text-white text-sm">{t("dashboard.preview.progress")}</span>
                       </div>
                       <div className="h-2 bg-slate-700 rounded-full overflow-hidden">
                         <div className="h-full w-3/4 bg-gradient-to-r from-blue-500 to-blue-400 rounded-full"></div>
@@ -118,31 +121,31 @@ export default function InteractiveDashboardPage() {
               <AlertTriangle className="w-8 h-8 text-red-600" />
             </div>
             <h2 className="text-2xl font-bold text-slate-800 mb-4">
-              Most Dashboards Show Data. Very Few Enable Control.
+              {t("dashboard.problem.title")}
             </h2>
-            <p className="text-slate-600 mb-6">Many organizations already have reports and dashboards, yet still face:</p>
+            <p className="text-slate-600 mb-6">{t("dashboard.problem.subtitle")}</p>
             
             <div className="grid md:grid-cols-2 gap-4 mb-6">
               <div className="flex items-center gap-4 bg-red-50 p-4 rounded-lg">
                 <Clock className="w-6 h-6 text-red-600 flex-shrink-0" />
-                <span className="text-red-800">KPIs that lag behind real operational issues</span>
+                <span className="text-red-800">{t("dashboard.problem.item1")}</span>
               </div>
               <div className="flex items-center gap-4 bg-red-50 p-4 rounded-lg">
                 <Eye className="w-6 h-6 text-red-600 flex-shrink-0" />
-                <span className="text-red-800">Task execution that cannot be monitored end-to-end</span>
+                <span className="text-red-800">{t("dashboard.problem.item2")}</span>
               </div>
               <div className="flex items-center gap-4 bg-red-50 p-4 rounded-lg">
                 <Layers className="w-6 h-6 text-red-600 flex-shrink-0" />
-                <span className="text-red-800">Multiple versions of performance data</span>
+                <span className="text-red-800">{t("dashboard.problem.item3")}</span>
               </div>
               <div className="flex items-center gap-4 bg-red-50 p-4 rounded-lg">
                 <Users className="w-6 h-6 text-red-600 flex-shrink-0" />
-                <span className="text-red-800">Delayed decisions due to unclear ownership and status</span>
+                <span className="text-red-800">{t("dashboard.problem.item4")}</span>
               </div>
             </div>
 
             <p className="text-red-700 font-semibold italic text-lg">
-              Visibility without context does not improve performance.
+              {t("dashboard.problem.warning")}
             </p>
           </motion.div>
         </div>
@@ -157,18 +160,18 @@ export default function InteractiveDashboardPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              If You Cannot See It in Real Time, You Cannot Manage It in Real Time
+              {t("dashboard.positioning.title")}
             </h2>
             <p className="text-xl text-slate-300 mb-4">
-              ABT Interactive Dashboard is built on one core principle:
+              {t("dashboard.positioning.subtitle")}
             </p>
             <div className="bg-blue-600/20 border border-blue-500/30 rounded-xl p-6 max-w-2xl mx-auto mb-6">
               <p className="text-blue-400 text-lg font-semibold">
-                Operational decisions require live, trusted, and contextual data, not static reports.
+                {t("dashboard.positioning.principle")}
               </p>
             </div>
             <p className="text-slate-400 text-lg">
-              This system bridges the gap between metrics and execution.
+              {t("dashboard.positioning.bridge")}
             </p>
           </motion.div>
         </div>
@@ -184,9 +187,9 @@ export default function InteractiveDashboardPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-              A Unified View of Performance and Execution
+              {t("dashboard.solution.title")}
             </h2>
-            <p className="text-xl text-slate-600">The system provides:</p>
+            <p className="text-xl text-slate-600">{t("dashboard.solution.subtitle")}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -198,8 +201,8 @@ export default function InteractiveDashboardPage() {
               viewport={{ once: true }}
             >
               <CheckCircle className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="font-bold text-slate-800 text-lg mb-2">Real-time KPI Visualization</h3>
-              <p className="text-slate-600">Track operational, financial, and performance metrics as they happen</p>
+              <h3 className="font-bold text-slate-800 text-lg mb-2">{t("dashboard.solution.item1.title")}</h3>
+              <p className="text-slate-600">{t("dashboard.solution.item1.desc")}</p>
             </motion.div>
 
             <motion.div
@@ -210,8 +213,8 @@ export default function InteractiveDashboardPage() {
               viewport={{ once: true }}
             >
               <CheckCircle className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="font-bold text-slate-800 text-lg mb-2">Task and Workflow Monitoring</h3>
-              <p className="text-slate-600">See task ownership, progress, bottlenecks, and delays in one view</p>
+              <h3 className="font-bold text-slate-800 text-lg mb-2">{t("dashboard.solution.item2.title")}</h3>
+              <p className="text-slate-600">{t("dashboard.solution.item2.desc")}</p>
             </motion.div>
 
             <motion.div
@@ -222,8 +225,8 @@ export default function InteractiveDashboardPage() {
               viewport={{ once: true }}
             >
               <CheckCircle className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="font-bold text-slate-800 text-lg mb-2">Drill-down Traceability</h3>
-              <p className="text-slate-600">From high-level KPI to individual task or transaction</p>
+              <h3 className="font-bold text-slate-800 text-lg mb-2">{t("dashboard.solution.item3.title")}</h3>
+              <p className="text-slate-600">{t("dashboard.solution.item3.desc")}</p>
             </motion.div>
 
             <motion.div
@@ -234,8 +237,8 @@ export default function InteractiveDashboardPage() {
               viewport={{ once: true }}
             >
               <CheckCircle className="w-8 h-8 text-blue-500 mb-4" />
-              <h3 className="font-bold text-slate-800 text-lg mb-2">Single Operational Command Center</h3>
-              <p className="text-slate-600">One dashboard for management, operations, and execution teams</p>
+              <h3 className="font-bold text-slate-800 text-lg mb-2">{t("dashboard.solution.item4.title")}</h3>
+              <p className="text-slate-600">{t("dashboard.solution.item4.desc")}</p>
             </motion.div>
           </div>
 
@@ -246,7 +249,7 @@ export default function InteractiveDashboardPage() {
             transition={{ duration: 0.6, delay: 0.4 }}
             viewport={{ once: true }}
           >
-            Designed for complex, multi-team operations.
+            {t("dashboard.solution.highlight")}
           </motion.p>
         </div>
       </section>
@@ -261,9 +264,9 @@ export default function InteractiveDashboardPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Decisions Should Be Driven by Reality, Not by Delayed Reports
+              {t("dashboard.value.title")}
             </h2>
-            <p className="text-xl text-slate-300">With ABT Interactive Dashboard, organizations can:</p>
+            <p className="text-xl text-slate-300">{t("dashboard.value.subtitle")}</p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6">
@@ -275,7 +278,7 @@ export default function InteractiveDashboardPage() {
               viewport={{ once: true }}
             >
               <CheckCircle className="w-6 h-6 text-blue-500 mb-3" />
-              <p className="text-white">Detect operational issues earlier</p>
+              <p className="text-white">{t("dashboard.value.item1")}</p>
             </motion.div>
             <motion.div
               className="bg-slate-800 rounded-xl p-6 border border-slate-700"
@@ -285,7 +288,7 @@ export default function InteractiveDashboardPage() {
               viewport={{ once: true }}
             >
               <CheckCircle className="w-6 h-6 text-blue-500 mb-3" />
-              <p className="text-white">Hold teams accountable with transparent task tracking</p>
+              <p className="text-white">{t("dashboard.value.item2")}</p>
             </motion.div>
             <motion.div
               className="bg-slate-800 rounded-xl p-6 border border-slate-700"
@@ -295,7 +298,7 @@ export default function InteractiveDashboardPage() {
               viewport={{ once: true }}
             >
               <CheckCircle className="w-6 h-6 text-blue-500 mb-3" />
-              <p className="text-white">Align execution with strategic KPIs</p>
+              <p className="text-white">{t("dashboard.value.item3")}</p>
             </motion.div>
             <motion.div
               className="bg-slate-800 rounded-xl p-6 border border-slate-700"
@@ -305,7 +308,7 @@ export default function InteractiveDashboardPage() {
               viewport={{ once: true }}
             >
               <CheckCircle className="w-6 h-6 text-blue-500 mb-3" />
-              <p className="text-white">Reduce dependency on manual reporting and follow-ups</p>
+              <p className="text-white">{t("dashboard.value.item4")}</p>
             </motion.div>
           </div>
 
@@ -316,7 +319,7 @@ export default function InteractiveDashboardPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            Your dashboard becomes a management tool, not a presentation slide.
+            {t("dashboard.value.highlight")}
           </motion.p>
         </div>
       </section>
@@ -331,7 +334,7 @@ export default function InteractiveDashboardPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">
-              We Start by Diagnosing Visibility Gaps
+              {t("dashboard.activation.title")}
             </h2>
           </motion.div>
 
@@ -346,9 +349,9 @@ export default function InteractiveDashboardPage() {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-blue-600">1</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">Operational Visibility Diagnostic</h3>
-              <p className="text-slate-500 text-sm mb-2">(5 minutes)</p>
-              <p className="text-slate-600 text-sm">Assess KPI clarity, data latency, and task monitoring maturity</p>
+              <h3 className="text-lg font-bold text-slate-800 mb-2">{t("dashboard.activation.step1.title")}</h3>
+              <p className="text-slate-500 text-sm mb-2">{t("dashboard.activation.step1.time")}</p>
+              <p className="text-slate-600 text-sm">{t("dashboard.activation.step1.desc")}</p>
             </motion.div>
 
             <motion.div
@@ -361,9 +364,9 @@ export default function InteractiveDashboardPage() {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-blue-600">2</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">Dashboard & Workflow Mapping Call</h3>
-              <p className="text-slate-500 text-sm mb-2">(30 minutes)</p>
-              <p className="text-slate-600 text-sm">Define the KPIs, task flows, and decision points that matter</p>
+              <h3 className="text-lg font-bold text-slate-800 mb-2">{t("dashboard.activation.step2.title")}</h3>
+              <p className="text-slate-500 text-sm mb-2">{t("dashboard.activation.step2.time")}</p>
+              <p className="text-slate-600 text-sm">{t("dashboard.activation.step2.desc")}</p>
             </motion.div>
 
             <motion.div
@@ -376,8 +379,8 @@ export default function InteractiveDashboardPage() {
               <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
                 <span className="text-2xl font-bold text-blue-600">3</span>
               </div>
-              <h3 className="text-lg font-bold text-slate-800 mb-2">Pilot Dashboard Implementation</h3>
-              <p className="text-slate-600 text-sm">Deploy dashboards aligned to real operational control needs</p>
+              <h3 className="text-lg font-bold text-slate-800 mb-2">{t("dashboard.activation.step3.title")}</h3>
+              <p className="text-slate-600 text-sm">{t("dashboard.activation.step3.desc")}</p>
             </motion.div>
           </div>
         </div>
@@ -392,10 +395,10 @@ export default function InteractiveDashboardPage() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Ready to Gain Real-Time Visibility?
+              {t("dashboard.cta.title")}
             </h2>
             <p className="text-xl text-white/80 mb-8">
-              Start your journey to actionable operational intelligence
+              {t("dashboard.cta.subtitle")}
             </p>
             <a
               href="https://form.jotform.com/253635394658470"
@@ -404,7 +407,7 @@ export default function InteractiveDashboardPage() {
               className="inline-flex items-center gap-2 bg-white hover:bg-slate-100 text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg transition-colors"
               data-testid="button-start-diagnostic"
             >
-              Start the Diagnostic
+              {t("dashboard.cta.button")}
               <ArrowRight className="w-5 h-5" />
             </a>
           </motion.div>
@@ -413,7 +416,7 @@ export default function InteractiveDashboardPage() {
 
       <footer className="bg-slate-900 py-8 px-6 border-t border-slate-800">
         <div className="container mx-auto text-center">
-          <p className="text-slate-400">© 2024 Air Box Teknologi. All rights reserved.</p>
+          <p className="text-slate-400">{t("footer.rights")}</p>
         </div>
       </footer>
     </div>
