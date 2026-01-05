@@ -941,6 +941,10 @@ const translations: Record<string, Record<Language, string>> = {
     EN: "Start the Diagnostic",
     ID: "Mulai Diagnostik"
   },
+  "common.cancel": {
+    EN: "Cancel",
+    ID: "Batal"
+  },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);

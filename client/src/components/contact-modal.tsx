@@ -189,7 +189,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     disabled={isSubmitting}
                     data-testid="button-cancel"
                   >
-                    Cancel
+                    {t("common.cancel")}
                   </Button>
                   <Button
                     type="submit"
