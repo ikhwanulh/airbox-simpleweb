@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { useLanguage } from "@/lib/language-context";
 import ContactModal from "@/components/contact-modal";
-import LanguageToggle from "@/components/language-toggle";
 
 const businessExperts = [
   {
@@ -108,8 +107,6 @@ export default function Team() {
           </div>
         </div>
       </nav>
-
-      <LanguageToggle variant="inline" />
 
       <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="container mx-auto px-6 text-center">
