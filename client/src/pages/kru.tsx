@@ -16,14 +16,9 @@ export default function KruPage() {
     <div className="min-h-screen bg-slate-900">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-sm border-b border-slate-800">
         <div className="container mx-auto px-6 py-4">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <span className="text-white font-bold text-xl cursor-pointer">Air Box Teknologi</span>
-            </Link>
-            <Link href="/">
-              <span className="text-slate-300 hover:text-white transition-colors cursor-pointer">{t("backToHome")}</span>
-            </Link>
-          </div>
+          <Link href="/">
+            <span className="text-slate-300 hover:text-white transition-colors cursor-pointer">{t("backToHome")}</span>
+          </Link>
         </div>
       </nav>
 
