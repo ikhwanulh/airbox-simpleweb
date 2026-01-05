@@ -63,7 +63,7 @@ const translations: Record<string, Record<Language, string>> = {
   },
   "products.dashboard.tag1": {
     EN: "Real-time Analytics",
-    ID: "Analitik Waktu Nyata"
+    ID: "Real-time Analytics"
   },
   "products.dashboard.tag2": {
     EN: "Task Management",
@@ -91,7 +91,7 @@ const translations: Record<string, Record<Language, string>> = {
   },
   "products.kurir.tag3": {
     EN: "Real-time Updates",
-    ID: "Pembaruan Waktu Nyata"
+    ID: "Real-time Updates"
   },
   "products.kru.title": {
     EN: "KRU",
@@ -274,8 +274,8 @@ const translations: Record<string, Record<Language, string>> = {
     ID: "Anggota Tim"
   },
   "backToHome": {
-    EN: "← Back to Home",
-    ID: "← Kembali ke Beranda"
+    EN: "Back to Home",
+    ID: "Kembali ke Beranda"
   },
   "team.title": {
     EN: "Our Team",
@@ -651,7 +651,7 @@ const translations: Record<string, Record<Language, string>> = {
   },
   "kurir.solution.item3.title": {
     EN: "Real-time Operational Visibility",
-    ID: "Visibilitas Operasional Waktu Nyata"
+    ID: "Real-time Operational Visibility"
   },
   "kurir.solution.item3.desc": {
     EN: "Operations teams always know what is happening and why",
@@ -751,7 +751,7 @@ const translations: Record<string, Record<Language, string>> = {
   },
   "dashboard.hero.title": {
     EN: "Real-Time Visibility. Actionable Control. One Source of Truth.",
-    ID: "Visibilitas Waktu Nyata. Kontrol yang Dapat Ditindaklanjuti. Satu Sumber Kebenaran."
+    ID: "Real-Time Visibility. Kontrol yang Dapat Ditindaklanjuti. Satu Sumber Kebenaran."
   },
   "dashboard.hero.description": {
     EN: "ABT Interactive Dashboard & Task Monitoring is a real-time operational intelligence system that transforms raw operational data into clear, actionable insights — enabling leaders to monitor KPIs, track execution, and make decisions with confidence.",
@@ -767,7 +767,7 @@ const translations: Record<string, Record<Language, string>> = {
   },
   "dashboard.preview.kpis": {
     EN: "Real-time KPIs",
-    ID: "KPI Waktu Nyata"
+    ID: "Real-time KPIs"
   },
   "dashboard.preview.monitoring": {
     EN: "Live Monitoring",
@@ -807,7 +807,7 @@ const translations: Record<string, Record<Language, string>> = {
   },
   "dashboard.positioning.title": {
     EN: "If You Cannot See It in Real Time, You Cannot Manage It in Real Time",
-    ID: "Jika Anda Tidak Dapat Melihatnya Secara Waktu Nyata, Anda Tidak Dapat Mengelolanya Secara Waktu Nyata"
+    ID: "Jika Anda Tidak Dapat Melihatnya Secara Real Time, Anda Tidak Dapat Mengelolanya Secara Real Time"
   },
   "dashboard.positioning.subtitle": {
     EN: "ABT Interactive Dashboard is built on one core principle:",
@@ -831,7 +831,7 @@ const translations: Record<string, Record<Language, string>> = {
   },
   "dashboard.solution.item1.title": {
     EN: "Real-time KPI Visualization",
-    ID: "Visualisasi KPI Waktu Nyata"
+    ID: "Visualisasi KPI Real-time"
   },
   "dashboard.solution.item1.desc": {
     EN: "Track operational, financial, and performance metrics as they happen",
@@ -931,7 +931,7 @@ const translations: Record<string, Record<Language, string>> = {
   },
   "dashboard.cta.title": {
     EN: "Ready to Gain Real-Time Visibility?",
-    ID: "Siap Mendapatkan Visibilitas Waktu Nyata?"
+    ID: "Siap Mendapatkan Real-Time Visibility?"
   },
   "dashboard.cta.subtitle": {
     EN: "Start your journey to actionable operational intelligence",
@@ -953,9 +953,9 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const [language, setLanguage] = useState<Language>(() => {
     if (typeof window !== "undefined") {
       const saved = localStorage.getItem("language");
-      return (saved as Language) || "EN";
+      return (saved as Language) || "ID";
     }
-    return "EN";
+    return "ID";
   });
 
   useEffect(() => {
