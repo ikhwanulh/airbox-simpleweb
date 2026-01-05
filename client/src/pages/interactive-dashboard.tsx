@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { BarChart3, CheckCircle, AlertTriangle, Clock, Users, Target, Layers, Eye, ArrowRight, ExternalLink, Activity, TrendingUp } from "lucide-react";
 import { Link } from "wouter";
 import { useLanguage } from "@/lib/language-context";
+import LanguageToggle from "@/components/language-toggle";
 
 export default function InteractiveDashboardPage() {
   const { t } = useLanguage();
@@ -26,7 +27,11 @@ export default function InteractiveDashboardPage() {
         </div>
       </nav>
 
-      <section className="pt-32 pb-20 px-6">
+      <div className="pt-16">
+        <LanguageToggle variant="inline" theme="dark" />
+      </div>
+
+      <section className="pt-16 pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div

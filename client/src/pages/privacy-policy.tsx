@@ -3,6 +3,7 @@ import { ArrowLeft, Download, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { useLanguage } from "@/lib/language-context";
+import LanguageToggle from "@/components/language-toggle";
 
 export default function PrivacyPolicy() {
   const { t } = useLanguage();
@@ -22,6 +23,8 @@ export default function PrivacyPolicy() {
           </div>
         </div>
       </nav>
+
+      <LanguageToggle variant="inline" />
 
       {/* Content */}
       <div className="container mx-auto px-6 py-12">

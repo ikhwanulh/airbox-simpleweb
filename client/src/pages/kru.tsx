@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Users, Clock, FileText, CheckCircle, AlertTriangle, Lightbulb } from "lucide-react";
 import { Link } from "wouter";
 import { useLanguage } from "@/lib/language-context";
+import LanguageToggle from "@/components/language-toggle";
 import kruImage from "@assets/KRU_1766991464658.png";
 
 export default function KruPage() {
@@ -27,7 +28,11 @@ export default function KruPage() {
         </div>
       </nav>
 
-      <section className="pt-32 pb-20 px-6">
+      <div className="pt-16">
+        <LanguageToggle variant="inline" theme="dark" />
+      </div>
+
+      <section className="pt-16 pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div

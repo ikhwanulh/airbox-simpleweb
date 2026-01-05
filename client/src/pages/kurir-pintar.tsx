@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Truck, CheckCircle, AlertTriangle, Lightbulb, Search, Clock, FileText, Target, Shield, ArrowRight, Play } from "lucide-react";
 import { Link } from "wouter";
 import { useLanguage } from "@/lib/language-context";
+import LanguageToggle from "@/components/language-toggle";
 import kurirImage from "@assets/KurirPintar_1766991464658.png";
 import kurirTraceabilityVideo from "@assets/kurirpintar_1767149142418.mp4";
 
@@ -28,7 +29,11 @@ export default function KurirPintarPage() {
         </div>
       </nav>
 
-      <section className="pt-32 pb-20 px-6">
+      <div className="pt-16">
+        <LanguageToggle variant="inline" theme="dark" />
+      </div>
+
+      <section className="pt-16 pb-20 px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <motion.div
