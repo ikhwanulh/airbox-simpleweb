@@ -945,6 +945,274 @@ const translations: Record<string, Record<Language, string>> = {
     EN: "Cancel",
     ID: "Batal"
   },
+  "pricing.title": {
+    EN: "Pricing Plans",
+    ID: "Paket Harga"
+  },
+  "pricing.tier": {
+    EN: "Tier",
+    ID: "Tier"
+  },
+  "pricing.usageFee": {
+    EN: "Usage Fee",
+    ID: "Biaya Penggunaan"
+  },
+  "pricing.baseFee": {
+    EN: "Base Fee",
+    ID: "Biaya Dasar"
+  },
+  "pricing.features": {
+    EN: "Features",
+    ID: "Fitur"
+  },
+  "pricing.platform": {
+    EN: "Platform",
+    ID: "Platform"
+  },
+  "pricing.addOnCost": {
+    EN: "Add-on Cost",
+    ID: "Biaya Tambahan"
+  },
+  "pricing.additionalService": {
+    EN: "Additional Service",
+    ID: "Layanan Tambahan"
+  },
+  "pricing.perMonth": {
+    EN: "/ month",
+    ID: "/ bulan"
+  },
+  "kru.pricing.basic.name": {
+    EN: "Basic",
+    ID: "Basic"
+  },
+  "kru.pricing.basic.jargon": {
+    EN: "Basic HR operation control",
+    ID: "Untuk operasional HR dasar yang rapi dan konsisten."
+  },
+  "kru.pricing.basic.usage": {
+    EN: "IDR 14,000 / active employee",
+    ID: "IDR 14.000 / karyawan aktif"
+  },
+  "kru.pricing.basic.base": {
+    EN: "-",
+    ID: "-"
+  },
+  "kru.pricing.basic.platform": {
+    EN: "Web & Mobile app (Android + iOS)",
+    ID: "Web & Mobile app (Android + iOS)"
+  },
+  "kru.pricing.basic.addon": {
+    EN: "IDR 4,000 / module per employee",
+    ID: "IDR 4.000 / modul per karyawan"
+  },
+  "kru.pricing.basic.service": {
+    EN: "ERP Integration: Rp 5,000,000",
+    ID: "Integrasi ERP: Rp 5.000.000"
+  },
+  "kru.pricing.scaleup.name": {
+    EN: "Scale Up",
+    ID: "Scale Up"
+  },
+  "kru.pricing.scaleup.jargon": {
+    EN: "Scale up HR operation sustainably",
+    ID: "Untuk operasional HR yang bertumbuh"
+  },
+  "kru.pricing.scaleup.usage": {
+    EN: "IDR 20,000 / active employee",
+    ID: "IDR 20.000 / karyawan aktif"
+  },
+  "kru.pricing.scaleup.base": {
+    EN: "-",
+    ID: "-"
+  },
+  "kru.pricing.scaleup.platform": {
+    EN: "Web & Mobile app (Android + iOS) + Smartwatch app",
+    ID: "Web & Mobile app (Android + iOS) + Smartwatch app"
+  },
+  "kru.pricing.scaleup.addon": {
+    EN: "IDR 3,000 / module per employee",
+    ID: "IDR 3.000 / modul per karyawan"
+  },
+  "kru.pricing.scaleup.service": {
+    EN: "ERP Integration: Rp 5,000,000",
+    ID: "Integrasi ERP: Rp 5.000.000"
+  },
+  "kru.pricing.enterprise.name": {
+    EN: "Enterprise",
+    ID: "Enterprise"
+  },
+  "kru.pricing.enterprise.jargon": {
+    EN: "1 admin for thousand employee",
+    ID: "1 admin untuk seribuan pegawai"
+  },
+  "kru.pricing.enterprise.usage": {
+    EN: "IDR 20,000 / active employee",
+    ID: "IDR 20.000 / karyawan aktif"
+  },
+  "kru.pricing.enterprise.base": {
+    EN: "IDR 5,000,000 / month",
+    ID: "IDR 5.000.000 / bulan"
+  },
+  "kru.pricing.enterprise.platform": {
+    EN: "Web & Mobile app (Android + iOS) + Smartwatch app",
+    ID: "Web & Mobile app (Android + iOS) + Smartwatch app"
+  },
+  "kru.pricing.enterprise.addon": {
+    EN: "-",
+    ID: "-"
+  },
+  "kru.pricing.enterprise.service": {
+    EN: "ERP Integration: Included",
+    ID: "Integrasi ERP: Termasuk"
+  },
+  "jurnal.pricing.bookkeeping.name": {
+    EN: "Bookkeeping Core",
+    ID: "Bookkeeping Core"
+  },
+  "jurnal.pricing.bookkeeping.jargon": {
+    EN: "Neat & consistent accounting",
+    ID: "Untuk pencatatan keuangan yang rapi dan konsisten."
+  },
+  "jurnal.pricing.bookkeeping.usage": {
+    EN: "IDR 950,000 / month",
+    ID: "IDR 950.000 / bulan"
+  },
+  "jurnal.pricing.bookkeeping.platform": {
+    EN: "Web",
+    ID: "Web"
+  },
+  "jurnal.pricing.bookkeeping.addon": {
+    EN: "IDR 500,000 / module",
+    ID: "IDR 500.000 / modul"
+  },
+  "jurnal.pricing.bookkeeping.service": {
+    EN: "Audit by KAP",
+    ID: "Audit oleh KAP"
+  },
+  "jurnal.pricing.trusted.name": {
+    EN: "Trusted Reporting",
+    ID: "Trusted Reporting"
+  },
+  "jurnal.pricing.trusted.jargon": {
+    EN: "Trusted & traceable reporting at all level",
+    ID: "Untuk manajemen yang butuh angka yang bisa dipertanggungjawabkan."
+  },
+  "jurnal.pricing.trusted.usage": {
+    EN: "IDR 2,000,000 / month",
+    ID: "IDR 2.000.000 / bulan"
+  },
+  "jurnal.pricing.trusted.platform": {
+    EN: "Web & Mobile app (Android + iOS)",
+    ID: "Web & Mobile app (Android + iOS)"
+  },
+  "jurnal.pricing.trusted.addon": {
+    EN: "IDR 500,000 / module",
+    ID: "IDR 500.000 / modul"
+  },
+  "jurnal.pricing.trusted.service": {
+    EN: "Audit by KAP",
+    ID: "Audit oleh KAP"
+  },
+  "jurnal.pricing.investor.name": {
+    EN: "Investor & Bank Ready",
+    ID: "Investor & Bank Ready"
+  },
+  "jurnal.pricing.investor.jargon": {
+    EN: "Financial report as growth lever",
+    ID: "Untuk perusahaan yang siap menghadapi investor, bank, atau audit eksternal."
+  },
+  "jurnal.pricing.investor.usage": {
+    EN: "IDR 5,000,000 / month",
+    ID: "IDR 5.000.000 / bulan"
+  },
+  "jurnal.pricing.investor.platform": {
+    EN: "Web & Mobile app (Android + iOS)",
+    ID: "Web & Mobile app (Android + iOS)"
+  },
+  "jurnal.pricing.investor.addon": {
+    EN: "-",
+    ID: "-"
+  },
+  "jurnal.pricing.investor.service": {
+    EN: "Audit by KAP",
+    ID: "Audit oleh KAP"
+  },
+  "kurir.pricing.basic.name": {
+    EN: "Basic Traceability",
+    ID: "Basic Traceability"
+  },
+  "kurir.pricing.basic.jargon": {
+    EN: "100% Traceability",
+    ID: "Keterlacakan penuh di setiap milestone"
+  },
+  "kurir.pricing.basic.usage": {
+    EN: "IDR 1,000 / shipment bag",
+    ID: "IDR 1.000 / shipment bag"
+  },
+  "kurir.pricing.basic.base": {
+    EN: "-",
+    ID: "-"
+  },
+  "kurir.pricing.basic.platform": {
+    EN: "Web",
+    ID: "Web"
+  },
+  "kurir.pricing.basic.addon": {
+    EN: "add IDR 200 / pieces / module",
+    ID: "tambah IDR 200 / pieces / modul"
+  },
+  "kurir.pricing.sla.name": {
+    EN: "SLA Transparency",
+    ID: "SLA Transparency"
+  },
+  "kurir.pricing.sla.jargon": {
+    EN: "100% SLA transparency",
+    ID: "Pondasi Keterpenuhan SLA"
+  },
+  "kurir.pricing.sla.usage": {
+    EN: "IDR 1,500 / shipment bag",
+    ID: "IDR 1.500 / shipment bag"
+  },
+  "kurir.pricing.sla.base": {
+    EN: "-",
+    ID: "-"
+  },
+  "kurir.pricing.sla.platform": {
+    EN: "Web",
+    ID: "Web"
+  },
+  "kurir.pricing.sla.addon": {
+    EN: "add IDR 200 / pieces / module",
+    ID: "tambah IDR 200 / pieces / modul"
+  },
+  "kurir.pricing.full.name": {
+    EN: "Full Operational Control",
+    ID: "Full Operational Control"
+  },
+  "kurir.pricing.full.jargon": {
+    EN: "100% control on your delivery",
+    ID: "Kendali penuh atas layanan kurir"
+  },
+  "kurir.pricing.full.usage": {
+    EN: "IDR 2,000 / shipment bag",
+    ID: "IDR 2.000 / shipment bag"
+  },
+  "kurir.pricing.full.base": {
+    EN: "IDR 5,000,000 / month",
+    ID: "IDR 5.000.000 / bulan"
+  },
+  "kurir.pricing.full.platform": {
+    EN: "Web & Mobile app (Android + iOS)",
+    ID: "Web & Mobile app (Android + iOS)"
+  },
+  "kurir.pricing.full.addon": {
+    EN: "-",
+    ID: "-"
+  },
+  "kurir.pricing.full.service": {
+    EN: "GPS-embedded fleet tracking (Optional)",
+    ID: "Pelacakan armada GPS (Opsional)"
+  },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
