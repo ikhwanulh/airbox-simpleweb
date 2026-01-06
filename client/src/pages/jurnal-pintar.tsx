@@ -240,6 +240,167 @@ export default function JurnalPintarPage() {
         </div>
       </section>
 
+      <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">{t("pricing.title")}</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              className="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200 hover:border-orange-300 transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">{t("jurnal.pricing.bookkeeping.name")}</h3>
+              <p className="text-orange-600 font-medium mb-4 italic">"{t("jurnal.pricing.bookkeeping.jargon")}"</p>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.usageFee")}</p>
+                <p className="text-xl font-bold text-slate-800">{t("jurnal.pricing.bookkeeping.usage")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-slate-600 mb-2">{t("pricing.features")}</p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Customer & Vendor Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Invoicing & Billing</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Product / Service Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Bank & cash account management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Payment In/Out</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Journal Entry</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Balance Sheet Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Profit & Loss Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Cashflow Statement Report</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.platform")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("jurnal.pricing.bookkeeping.platform")}</p>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.addOnCost")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("jurnal.pricing.bookkeeping.addon")}</p>
+              </div>
+              <div>
+                <p className="text-sm text-slate-600">{t("pricing.additionalService")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("jurnal.pricing.bookkeeping.service")}</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-orange-50 rounded-2xl p-8 border-2 border-orange-400 shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">{t("jurnal.pricing.trusted.name")}</h3>
+              <p className="text-orange-600 font-medium mb-4 italic">"{t("jurnal.pricing.trusted.jargon")}"</p>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.usageFee")}</p>
+                <p className="text-xl font-bold text-slate-800">{t("jurnal.pricing.trusted.usage")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-slate-600 mb-2">{t("pricing.features")}</p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Customer & Vendor Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Invoicing & Billing</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Product / Service Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Bank & cash account management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Payment In/Out with Bank Transaction History</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Journal Entry</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Balance Sheet Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Profit & Loss Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Cashflow Statement Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />External Integration with POS</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Trial Balance</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />General Ledger Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Project / Branch Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Asset Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Purchasing & Vendor Bidding</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Audit Trail</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />Dynamic & Personalized Management Report</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.platform")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("jurnal.pricing.trusted.platform")}</p>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.addOnCost")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("jurnal.pricing.trusted.addon")}</p>
+              </div>
+              <div>
+                <p className="text-sm text-slate-600">{t("pricing.additionalService")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("jurnal.pricing.trusted.service")}</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-gradient-to-br from-orange-600 to-amber-600 rounded-2xl p-8 text-white shadow-xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold mb-2">{t("jurnal.pricing.investor.name")}</h3>
+              <p className="text-orange-200 font-medium mb-4 italic">"{t("jurnal.pricing.investor.jargon")}"</p>
+              <div className="mb-6">
+                <p className="text-sm text-orange-200">{t("pricing.usageFee")}</p>
+                <p className="text-xl font-bold">{t("jurnal.pricing.investor.usage")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-orange-200 mb-2">{t("pricing.features")}</p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Customer & Vendor Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Invoicing & Billing</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Product / Service Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Bank & cash account management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Payment In/Out with Bank Transaction History</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Journal Entry</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Balance Sheet Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Profit & Loss Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Cashflow Statement Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />External Integration with POS</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Trial Balance</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />General Ledger Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Project / Branch Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Asset Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Purchasing & Vendor Bidding</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Audit Trail</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Dynamic & Personalized Management Report</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Warehouse Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Manufacturing Module</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Investor Grade Reporting</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />AI-Assisted General Ledger Review</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />IT Priority Support</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-orange-300 mt-0.5 flex-shrink-0" />Monthly Accountant Consultation</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-orange-200">{t("pricing.platform")}</p>
+                <p className="text-sm font-medium">{t("jurnal.pricing.investor.platform")}</p>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-orange-200">{t("pricing.addOnCost")}</p>
+                <p className="text-sm font-medium">{t("jurnal.pricing.investor.addon")}</p>
+              </div>
+              <div>
+                <p className="text-sm text-orange-200">{t("pricing.additionalService")}</p>
+                <p className="text-sm font-medium">{t("jurnal.pricing.investor.service")}</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 px-6 bg-gradient-to-r from-orange-600 to-amber-600">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div

@@ -175,6 +175,155 @@ export default function KruPage() {
         </div>
       </section>
 
+      <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">{t("pricing.title")}</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              className="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200 hover:border-purple-300 transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">{t("kru.pricing.basic.name")}</h3>
+              <p className="text-purple-600 font-medium mb-4 italic">"{t("kru.pricing.basic.jargon")}"</p>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.usageFee")}</p>
+                <p className="text-xl font-bold text-slate-800">{t("kru.pricing.basic.usage")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.baseFee")}</p>
+                <p className="text-lg font-semibold text-slate-800">{t("kru.pricing.basic.base")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-slate-600 mb-2">{t("pricing.features")}</p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Employee Master Data</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Presence, Leave, Overtime</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Presence Fraud Prevention</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Basic Reporting</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />1 rule payroll & payslip</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.platform")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kru.pricing.basic.platform")}</p>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.addOnCost")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kru.pricing.basic.addon")}</p>
+              </div>
+              <div>
+                <p className="text-sm text-slate-600">{t("pricing.additionalService")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kru.pricing.basic.service")}</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-purple-50 rounded-2xl p-8 border-2 border-purple-400 shadow-lg relative"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">{t("kru.pricing.scaleup.name")}</h3>
+              <p className="text-purple-600 font-medium mb-4 italic">"{t("kru.pricing.scaleup.jargon")}"</p>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.usageFee")}</p>
+                <p className="text-xl font-bold text-slate-800">{t("kru.pricing.scaleup.usage")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.baseFee")}</p>
+                <p className="text-lg font-semibold text-slate-800">{t("kru.pricing.scaleup.base")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-slate-600 mb-2">{t("pricing.features")}</p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Employee Master Data</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Presence, Leave, Overtime</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Presence Fraud Prevention</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Basic Reporting</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Payroll & payslip automation rules</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Employee shift schedule</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Productivity & operational insight dashboard</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-600 mt-0.5 flex-shrink-0" />Recruitment Platform</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.platform")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kru.pricing.scaleup.platform")}</p>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.addOnCost")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kru.pricing.scaleup.addon")}</p>
+              </div>
+              <div>
+                <p className="text-sm text-slate-600">{t("pricing.additionalService")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kru.pricing.scaleup.service")}</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-gradient-to-br from-purple-600 to-blue-600 rounded-2xl p-8 text-white shadow-xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold mb-2">{t("kru.pricing.enterprise.name")}</h3>
+              <p className="text-purple-200 font-medium mb-4 italic">"{t("kru.pricing.enterprise.jargon")}"</p>
+              <div className="mb-6">
+                <p className="text-sm text-purple-200">{t("pricing.usageFee")}</p>
+                <p className="text-xl font-bold">{t("kru.pricing.enterprise.usage")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm text-purple-200">{t("pricing.baseFee")}</p>
+                <p className="text-lg font-semibold">{t("kru.pricing.enterprise.base")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-purple-200 mb-2">{t("pricing.features")}</p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Employee Master Data</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Presence, Leave, Overtime</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Presence Fraud Prevention</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Basic Reporting</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Payroll & payslip automation rules</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Employee shift schedule</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Productivity & operational insight dashboard</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Recruitment Platform</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />e-contract platform</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Personalized dashboard</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />API & System integration</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-purple-300 mt-0.5 flex-shrink-0" />Priority Support</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-purple-200">{t("pricing.platform")}</p>
+                <p className="text-sm font-medium">{t("kru.pricing.enterprise.platform")}</p>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-purple-200">{t("pricing.addOnCost")}</p>
+                <p className="text-sm font-medium">{t("kru.pricing.enterprise.addon")}</p>
+              </div>
+              <div>
+                <p className="text-sm text-purple-200">{t("pricing.additionalService")}</p>
+                <p className="text-sm font-medium">{t("kru.pricing.enterprise.service")}</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 px-6 bg-gradient-to-r from-purple-600 to-blue-600">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div

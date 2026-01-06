@@ -385,6 +385,155 @@ export default function KurirPintarPage() {
         </div>
       </section>
 
+      <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-6xl">
+          <motion.div
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-slate-800 mb-4">{t("pricing.title")}</h2>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <motion.div
+              className="bg-slate-50 rounded-2xl p-8 border-2 border-slate-200 hover:border-green-300 transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">{t("kurir.pricing.basic.name")}</h3>
+              <p className="text-green-600 font-medium mb-4 italic">"{t("kurir.pricing.basic.jargon")}"</p>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.usageFee")}</p>
+                <p className="text-xl font-bold text-slate-800">{t("kurir.pricing.basic.usage")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.baseFee")}</p>
+                <p className="text-lg font-semibold text-slate-800">{t("kurir.pricing.basic.base")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-slate-600 mb-2">{t("pricing.features")}</p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Package management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Package tracking</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill tracking</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill print out</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill realtime monitoring</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.platform")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kurir.pricing.basic.platform")}</p>
+              </div>
+              <div>
+                <p className="text-sm text-slate-600">{t("pricing.addOnCost")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kurir.pricing.basic.addon")}</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-green-50 rounded-2xl p-8 border-2 border-green-400 shadow-lg"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold text-slate-800 mb-2">{t("kurir.pricing.sla.name")}</h3>
+              <p className="text-green-600 font-medium mb-4 italic">"{t("kurir.pricing.sla.jargon")}"</p>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.usageFee")}</p>
+                <p className="text-xl font-bold text-slate-800">{t("kurir.pricing.sla.usage")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm text-slate-600">{t("pricing.baseFee")}</p>
+                <p className="text-lg font-semibold text-slate-800">{t("kurir.pricing.sla.base")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-slate-600 mb-2">{t("pricing.features")}</p>
+                <ul className="space-y-2 text-sm text-slate-700">
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Package management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Package tracking</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill tracking</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill print out</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill realtime monitoring</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Package delivery SLA dashboard</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill SLA dashboard</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill delivery notification</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Warehouse inventory control</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-600 mt-0.5 flex-shrink-0" />Operation Central Dashboard</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-slate-600">{t("pricing.platform")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kurir.pricing.sla.platform")}</p>
+              </div>
+              <div>
+                <p className="text-sm text-slate-600">{t("pricing.addOnCost")}</p>
+                <p className="text-sm font-medium text-slate-800">{t("kurir.pricing.sla.addon")}</p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="bg-gradient-to-br from-green-600 to-teal-600 rounded-2xl p-8 text-white shadow-xl"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <h3 className="text-2xl font-bold mb-2">{t("kurir.pricing.full.name")}</h3>
+              <p className="text-green-200 font-medium mb-4 italic">"{t("kurir.pricing.full.jargon")}"</p>
+              <div className="mb-6">
+                <p className="text-sm text-green-200">{t("pricing.usageFee")}</p>
+                <p className="text-xl font-bold">{t("kurir.pricing.full.usage")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm text-green-200">{t("pricing.baseFee")}</p>
+                <p className="text-lg font-semibold">{t("kurir.pricing.full.base")}</p>
+              </div>
+              <div className="mb-6">
+                <p className="text-sm font-semibold text-green-200 mb-2">{t("pricing.features")}</p>
+                <ul className="space-y-2 text-sm">
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Package management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Package tracking</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill tracking</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill print out</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill realtime monitoring</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Package delivery SLA dashboard</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill SLA dashboard</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Air Way Bill/Sea Way Bill delivery notification</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Warehouse inventory control</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Operation Central Dashboard</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Driver Management & Driver Mobile App</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Fleet Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Delivery Order Management</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Realtime trucking dashboard</li>
+                  <li className="flex items-start gap-2"><CheckCircle className="w-4 h-4 text-green-300 mt-0.5 flex-shrink-0" />Ops intelligence notification</li>
+                </ul>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-green-200">{t("pricing.platform")}</p>
+                <p className="text-sm font-medium">{t("kurir.pricing.full.platform")}</p>
+              </div>
+              <div className="mb-4">
+                <p className="text-sm text-green-200">{t("pricing.addOnCost")}</p>
+                <p className="text-sm font-medium">{t("kurir.pricing.full.addon")}</p>
+              </div>
+              <div>
+                <p className="text-sm text-green-200">{t("pricing.additionalService")}</p>
+                <p className="text-sm font-medium">{t("kurir.pricing.full.service")}</p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       <section className="py-20 px-6 bg-gradient-to-r from-green-600 to-teal-600">
         <div className="container mx-auto max-w-4xl text-center">
           <motion.div
